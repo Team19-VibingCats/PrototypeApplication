@@ -11,8 +11,18 @@ config_version=4
 [application]
 
 config/name="Pre-prototype"
-run/main_scene="res://Scenes/Main/MainScene.tscn"
+run/main_scene="res://Scenes/Menus/Multiplayer/UsernameScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GlobalConstants="*res://Singletons/GlobalConstants.gd"
+GlobalVariables="*res://Singletons/GlobalVariables.gd"
+PropertiesHandler="*res://Singletons/Multiplayer/PropertiesHandler.gd"
+FunctionCallHandler="*res://Singletons/Multiplayer/FunctionCallHandler.gd"
+RequestHandler="*res://Singletons/Multiplayer/RequestHandler.tscn"
+TokenHandler="*res://Singletons/Multiplayer/TokenHandler.tscn"
+NodeTracker="*res://Singletons/Multiplayer/NodeTracker.gd"
 
 [input]
 
