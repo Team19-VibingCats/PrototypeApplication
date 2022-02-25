@@ -3,6 +3,7 @@ extends Node
 var token = ""
 var worldName = ""
 var username = ""
+var color = Color.white
 
 var host = false
 

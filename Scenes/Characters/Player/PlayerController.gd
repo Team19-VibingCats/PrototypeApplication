@@ -6,11 +6,14 @@ var fake = false
 
 func _ready():
 	name = TokenHandler.username
+	$Body/Sprite.self_modulate = TokenHandler.color
 	
 	FunctionCallHandler.requestFunctionCall(FakeObjectHandler,"instanceObject",{"instance": "player","name": name},true)
+	PropertiesHandler.requestPropertySync($Body/Sprite,"self_modulate",TokenHandler.color,false,true)
 
-func _process(delta):
+func _physics_process(delta):
 	handleInputs()
+	moveCamera(delta)
 
 func handleInputs():
 	if fake: return
@@ -26,3 +29,6 @@ func handleInputs():
 		moveDirection.y -= 1
 	
 	body.setMoveDirection(moveDirection)
+
+func moveCamera(delta):
+	$Camera2D.position = lerp($Camera2D.position,$Body.position,delta*2)

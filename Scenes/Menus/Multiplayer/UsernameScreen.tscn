@@ -26,4 +26,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorPicker" type="ColorPicker" parent="."]
+margin_left = 216.0
+margin_top = 32.0
+margin_right = 532.0
+margin_bottom = 494.0
+presets_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

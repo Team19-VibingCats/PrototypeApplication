@@ -19,7 +19,7 @@ func _physics_process(delta):
 	currentVelocity.x *= damp
 	
 #	Jump logic
-	if moveDirection.y == 1:
+	if moveDirection.y == 1 && !is_on_ceiling():
 		if is_on_floor():
 			currentJumpLength = 0.0
 		else:
