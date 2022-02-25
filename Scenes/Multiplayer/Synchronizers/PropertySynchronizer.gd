@@ -2,14 +2,22 @@ extends Node
 
 export(NodePath) var nodePath
 export var propertyPath = ""
+export var interpolate = false
+export var interpolateSpeed = 1.0
 export var persistent = false
+export var alwaysSynchronize = false
 
 var waitingForSync = false
 var actualNode
 
+var globalPath = ""
 
 func _ready():
 	actualNode = get_node(nodePath)
+	
+	if alwaysSynchronize:
+		$ProcessManager.free()
+		set_process(true)
 
 func _process(delta):
 	synchronize()
@@ -28,9 +36,11 @@ func synchronize():
 	var newValue = actualNode.get(propertyPath)
 	RequestHandler.requestSync(var2str({
 		"type": "setProperty", 
-		"nodePath": nodePath, 
+		"nodePath": str(actualNode.get_path()), 
 		"propertyPath": propertyPath, 
-		"value": newValue}), persistent, self)
+		"value": newValue,
+		"interpolate": interpolate,
+		"interpolateSpeed": interpolateSpeed}), persistent, self)
 
 func validNode():
 	if is_instance_valid(actualNode):

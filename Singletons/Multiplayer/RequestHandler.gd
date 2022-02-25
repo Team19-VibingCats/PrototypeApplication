@@ -6,60 +6,74 @@ var pendingRequests = []
 var waitingSynchronizers = []
 var transmitCooldown = 0.0
 
+var connected = false
+
 #Connection logic-----------------------------------------------------------------------------------
 func _ready():
 	websocket.connect("connection_closed", self, "connectionClosed")
 	websocket.connect("connection_error", self, "connectionClosed")
 	websocket.connect("connection_established", self, "connectionEstablished")
-	websocket.connect("data_received", self, "dataRecieved")
+#	websocket.connect("data_received", self, "dataRecieved")
 
 func tryToConnect():
 	websocket.connect_to_url(GlobalConstants.serverAddress+"/socket")
 
 func connectionEstablished(message):
 	print("connection established")
+	connected = true
 
 func connectionClosed(faulty = false):
 	print("connection failed")
+	connected = false
 	if faulty:
 		tryToConnect()
 
 func _process(delta):
-	websocket.poll()
+	retrieveData()
 	attemptDataTransmit(delta)
 
 #Data retrieval-------------------------------------------------------------------------------------
-func dataRecieved():
-	var data = websocket.get_peer(1).get_packet().get_string_from_utf8()
-	var json = JSON.parse(data)
-	if json.result != null:
-		for request in json.result:
-			processRequest(request)
+func retrieveData():
+	websocket.poll()
+	if websocket.get_peer(1).get_available_packet_count() > 0:
+		var body = websocket.get_peer(1).get_packet()
+		var json = JSON.parse(body.get_string_from_utf8())
+		
+		if json.result != null:
+			for request in json.result:
+				processRequest(request)
 
-func processRequest(request):
+func processRequest(requestString):
+	if requestString.left(1) != "{": requestString = "{ "+requestString
+	
+	var request = str2var(requestString)
 	match request["type"]:
 		"setProperty":
-			pass
+			PropertiesHandler.setProperty(request["nodePath"], request["propertyPath"], request["value"], request["interpolate"], request["interpolateSpeed"])
 		"functionCall":
-			pass
+			FunctionCallHandler.callFunction(request["nodePath"],request["functionName"],request["parameters"])
 
 #Data transmitting----------------------------------------------------------------------------------
-func requestSync(data, persistent, synchronizer):
-	pendingRequests.append(str(persistent)+"/"+data)
+func requestSync(data, persistent, synchronizer = null):
+	pendingRequests.append("#"+str(persistent)+"%"+data)
 	if synchronizer: waitingSynchronizers.append(synchronizer)
 
 func attemptDataTransmit(delta):
 	transmitCooldown -= delta
 	
 	if transmitCooldown <= 0:
-		transmitCooldown = 0.1
+		transmitCooldown = 0.05
 		
-		if pendingRequests.size() > 0:
+		if connected:
 			sendPendingRequests()
 			alertSynchronizers()
 
 func sendPendingRequests():
-	var dataString = JSON.print(pendingRequests) + "/" + TokenHandler.token + "/" + TokenHandler.worldName
+	var requestString = ""
+	for request in pendingRequests:
+		requestString += request
+	var dataString = requestString + "&" + TokenHandler.token + "&" + TokenHandler.worldName
+	websocket.get_peer(1).set_write_mode(0)
 	websocket.get_peer(1).put_packet(dataString.to_utf8())
 	pendingRequests.clear()
 

@@ -23,6 +23,7 @@ FunctionCallHandler="*res://Singletons/Multiplayer/FunctionCallHandler.gd"
 RequestHandler="*res://Singletons/Multiplayer/RequestHandler.tscn"
 TokenHandler="*res://Singletons/Multiplayer/TokenHandler.tscn"
 NodeTracker="*res://Singletons/Multiplayer/NodeTracker.gd"
+FakeObjectHandler="*res://Singletons/Multiplayer/FakeObjectHandler.gd"
 
 [input]
 

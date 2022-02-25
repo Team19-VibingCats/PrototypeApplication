@@ -4,7 +4,13 @@ var token = ""
 var worldName = ""
 var username = ""
 
+var host = false
+
 var loggedIn = false
+
+var synchronizers = []
+
+
 
 func createWorld():
 	$CreateWorldRequest.request(GlobalConstants.serverAddress+"/world/create", 
@@ -51,3 +57,17 @@ func _on_CreateWorldRequest_request_completed(result, response_code, headers, bo
 	
 	if response_code == 200:
 		login()
+
+func isHost():
+	print("Client is now the host")
+	host = true
+	notifySynchronizers()
+
+func isClient():
+	print("Client is not the host")
+	host = false
+	notifySynchronizers()
+
+func notifySynchronizers():
+	for synchronizer in synchronizers:
+		synchronizer.statusUpdated()
