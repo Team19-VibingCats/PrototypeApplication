@@ -3,12 +3,11 @@ extends Node
 var interpolatedProperties = {}
 
 func requestPropertySync(node,propertyPath, value, interpolate, persistent = false, interpolateSpeed = 0.0):
-	var newValue = node.get(propertyPath)
 	RequestHandler.requestSync(var2str({
 		"type": "setProperty", 
 		"nodePath": str(node.get_path()), 
 		"propertyPath": propertyPath, 
-		"value": newValue,
+		"value": value,
 		"interpolate": interpolate,
 		"interpolateSpeed": interpolateSpeed}), persistent)
 

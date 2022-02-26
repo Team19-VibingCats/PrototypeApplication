@@ -41,6 +41,20 @@ interpolate = true
 interpolateSpeed = 15.0
 alwaysSynchronize = true
 
+[node name="Label" type="Label" parent="Body"]
+visible = false
+margin_left = -87.0
+margin_top = -67.0
+margin_right = 87.0
+margin_bottom = -39.0
+text = "Player1"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 process_mode = 0

@@ -5,7 +5,7 @@ var lobbyTimer = 2.0
 func _process(delta):
 	lobbyTimer += delta
 	
-	if lobbyTimer > 2:
+	if lobbyTimer > 1:
 		lobbyTimer = 0.0
 		retrieveLobby()
 

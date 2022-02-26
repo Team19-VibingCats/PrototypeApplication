@@ -10,6 +10,8 @@ func _ready():
 	
 	FunctionCallHandler.requestFunctionCall(FakeObjectHandler,"instanceObject",{"instance": "player","name": name},true)
 	PropertiesHandler.requestPropertySync($Body/Sprite,"self_modulate",TokenHandler.color,false,true)
+	PropertiesHandler.requestPropertySync($Body/Label,"self_modulate",TokenHandler.color,false,true)
+	PropertiesHandler.requestPropertySync($Body/Label,"text",TokenHandler.username,false,true)
 
 func _physics_process(delta):
 	handleInputs()
