@@ -20,11 +20,13 @@ func _on_RetrieveLobby_request_completed(result, response_code, headers, body):
 	
 	var data = body.get_string_from_utf8()
 	var json = JSON.parse(data)
+	
 	if json.result != null:
 		if response_code == 200:
 			$LobbyList.text = ""
 			
-			for player in json.result:
+			for playerString in json.result:
+				var player = JSON.parse(playerString).result
 				$LobbyList.text += "\n"
 				$LobbyList.text += player["name"]
 

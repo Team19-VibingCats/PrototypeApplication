@@ -24,6 +24,7 @@ func connectionEstablished(message):
 
 func connectionClosed(faulty = false):
 	print("connection failed")
+	print(faulty)
 	connected = false
 	if faulty:
 		tryToConnect()
@@ -37,7 +38,11 @@ func retrieveData():
 	websocket.poll()
 	if websocket.get_peer(1).get_available_packet_count() > 0:
 		var body = websocket.get_peer(1).get_packet()
-		var json = JSON.parse(body.get_string_from_utf8())
+		
+		var compressedBytes = body
+		var uncompressedBytes = body.decompress_dynamic(-1,3)
+		
+		var json = JSON.parse(uncompressedBytes.get_string_from_utf8())
 		
 		if json.result != null:
 			for request in json.result:
@@ -73,8 +78,8 @@ func sendPendingRequests():
 	for request in pendingRequests:
 		requestString += request
 	var dataString = requestString + "&" + TokenHandler.token + "&" + TokenHandler.worldName
-	websocket.get_peer(1).set_write_mode(0)
-	websocket.get_peer(1).put_packet(dataString.to_utf8())
+	websocket.get_peer(1).set_write_mode(1)
+	websocket.get_peer(1).put_packet(dataString.to_utf8().compress(3))
 	pendingRequests.clear()
 
 func alertSynchronizers():

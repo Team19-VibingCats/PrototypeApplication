@@ -26,6 +26,10 @@ func _process(delta):
 	for id in interpolatedProperties:
 		var data = interpolatedProperties[id]
 		
+		if(!is_instance_valid(data[0])):
+			finishedProperties.append(id)
+			continue
+		
 		var startValue = data[2]
 		var newValue = data[3]
 		data[4] = clamp(data[4]+delta*data[5],0,1)

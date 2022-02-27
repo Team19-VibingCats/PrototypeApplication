@@ -1,7 +1,11 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Main/Test.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Multiplayer/Synchronizers/ProcessManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Multiplayer/Synchronizers/PropertySynchronizer.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -290,3 +294,1403 @@ tile_data = PoolIntArray( -983058, 0, 0, -983057, 0, 393217, -983056, 0, 1, -983
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 29 )
+
+[node name="Test" type="Sprite" parent="."]
+position = Vector2( -77, 19 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test2" type="Sprite" parent="."]
+position = Vector2( -72, 88 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test2" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test2" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test3" type="Sprite" parent="."]
+position = Vector2( -81, -59 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test3" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test3" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test4" type="Sprite" parent="."]
+position = Vector2( -75, -134 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test4" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test4" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test5" type="Sprite" parent="."]
+position = Vector2( -68, 168 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test5" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test5" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test6" type="Sprite" parent="."]
+position = Vector2( -84, -352 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test6" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test6" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test7" type="Sprite" parent="."]
+position = Vector2( -79, -283 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test7" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test7" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test8" type="Sprite" parent="."]
+position = Vector2( -88, -430 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test8" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test8" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test9" type="Sprite" parent="."]
+position = Vector2( -82, -505 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test9" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test9" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test10" type="Sprite" parent="."]
+position = Vector2( -75, -203 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test10" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test10" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test11" type="Sprite" parent="."]
+position = Vector2( -4, 19 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test11" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test11" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test12" type="Sprite" parent="."]
+position = Vector2( 1, 88 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test12" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test12" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test13" type="Sprite" parent="."]
+position = Vector2( -8, -59 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test13" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test13" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test14" type="Sprite" parent="."]
+position = Vector2( -2, -134 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test14" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test14" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test15" type="Sprite" parent="."]
+position = Vector2( 5, 168 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test15" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test15" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test16" type="Sprite" parent="."]
+position = Vector2( -11, -352 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test16" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test16" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test17" type="Sprite" parent="."]
+position = Vector2( -6, -283 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test17" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test17" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test18" type="Sprite" parent="."]
+position = Vector2( -15, -430 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test18" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test18" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test19" type="Sprite" parent="."]
+position = Vector2( -9, -505 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test19" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test19" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test20" type="Sprite" parent="."]
+position = Vector2( -2, -203 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test20" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test20" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test21" type="Sprite" parent="."]
+position = Vector2( -149, 9 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test21" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test21" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test22" type="Sprite" parent="."]
+position = Vector2( -144, 78 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test22" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test22" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test23" type="Sprite" parent="."]
+position = Vector2( -153, -69 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test23" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test23" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test24" type="Sprite" parent="."]
+position = Vector2( -147, -144 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test24" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test24" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test25" type="Sprite" parent="."]
+position = Vector2( -140, 158 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test25" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test25" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test26" type="Sprite" parent="."]
+position = Vector2( -156, -362 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test26" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test26" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test27" type="Sprite" parent="."]
+position = Vector2( -151, -293 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test27" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test27" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test28" type="Sprite" parent="."]
+position = Vector2( -160, -440 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test28" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test28" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test29" type="Sprite" parent="."]
+position = Vector2( -154, -515 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test29" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test29" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test30" type="Sprite" parent="."]
+position = Vector2( -147, -213 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test30" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test30" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test31" type="Sprite" parent="."]
+position = Vector2( -225, 9 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test31" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test31" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test32" type="Sprite" parent="."]
+position = Vector2( -220, 78 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test32" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test32" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test33" type="Sprite" parent="."]
+position = Vector2( -229, -69 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test33" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test33" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test34" type="Sprite" parent="."]
+position = Vector2( -223, -144 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test34" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test34" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test35" type="Sprite" parent="."]
+position = Vector2( -216, 158 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test35" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test35" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test36" type="Sprite" parent="."]
+position = Vector2( -232, -362 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test36" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test36" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test37" type="Sprite" parent="."]
+position = Vector2( -227, -293 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test37" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test37" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test38" type="Sprite" parent="."]
+position = Vector2( -236, -440 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test38" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test38" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test39" type="Sprite" parent="."]
+position = Vector2( -230, -515 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test39" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test39" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test40" type="Sprite" parent="."]
+position = Vector2( -223, -213 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test40" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test40" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test41" type="Sprite" parent="."]
+position = Vector2( -301, 9 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test41" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test41" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test42" type="Sprite" parent="."]
+position = Vector2( -296, 78 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test42" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test42" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test43" type="Sprite" parent="."]
+position = Vector2( -305, -69 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test43" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test43" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test44" type="Sprite" parent="."]
+position = Vector2( -299, -144 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test44" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test44" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test45" type="Sprite" parent="."]
+position = Vector2( -292, 158 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test45" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test45" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test46" type="Sprite" parent="."]
+position = Vector2( -308, -362 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test46" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test46" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test47" type="Sprite" parent="."]
+position = Vector2( -303, -293 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test47" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test47" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test48" type="Sprite" parent="."]
+position = Vector2( -312, -440 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test48" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test48" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test49" type="Sprite" parent="."]
+position = Vector2( -306, -515 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test49" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test49" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test50" type="Sprite" parent="."]
+position = Vector2( -299, -213 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test50" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test50" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test51" type="Sprite" parent="."]
+position = Vector2( 288, 24 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test51" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test51" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test52" type="Sprite" parent="."]
+position = Vector2( 293, 93 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test52" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test52" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test53" type="Sprite" parent="."]
+position = Vector2( 284, -54 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test53" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test53" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test54" type="Sprite" parent="."]
+position = Vector2( 290, -129 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test54" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test54" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test55" type="Sprite" parent="."]
+position = Vector2( 297, 173 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test55" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test55" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test56" type="Sprite" parent="."]
+position = Vector2( 281, -347 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test56" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test56" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test57" type="Sprite" parent="."]
+position = Vector2( 286, -278 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test57" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test57" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test58" type="Sprite" parent="."]
+position = Vector2( 277, -425 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test58" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test58" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test59" type="Sprite" parent="."]
+position = Vector2( 283, -500 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test59" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test59" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test60" type="Sprite" parent="."]
+position = Vector2( 290, -198 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test60" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test60" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test61" type="Sprite" parent="."]
+position = Vector2( 361, 24 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test61" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test61" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test62" type="Sprite" parent="."]
+position = Vector2( 366, 93 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test62" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test62" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test63" type="Sprite" parent="."]
+position = Vector2( 357, -54 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test63" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test63" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test64" type="Sprite" parent="."]
+position = Vector2( 363, -129 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test64" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test64" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test65" type="Sprite" parent="."]
+position = Vector2( 370, 173 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test65" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test65" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test66" type="Sprite" parent="."]
+position = Vector2( 354, -347 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test66" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test66" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test67" type="Sprite" parent="."]
+position = Vector2( 359, -278 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test67" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test67" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test68" type="Sprite" parent="."]
+position = Vector2( 350, -425 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test68" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test68" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test69" type="Sprite" parent="."]
+position = Vector2( 356, -500 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test69" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test69" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test70" type="Sprite" parent="."]
+position = Vector2( 363, -198 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test70" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test70" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test71" type="Sprite" parent="."]
+position = Vector2( 216, 14 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test71" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test71" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test72" type="Sprite" parent="."]
+position = Vector2( 221, 83 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test72" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test72" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test73" type="Sprite" parent="."]
+position = Vector2( 212, -64 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test73" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test73" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test74" type="Sprite" parent="."]
+position = Vector2( 218, -139 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test74" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test74" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test75" type="Sprite" parent="."]
+position = Vector2( 225, 163 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test75" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test75" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test76" type="Sprite" parent="."]
+position = Vector2( 209, -357 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test76" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test76" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test77" type="Sprite" parent="."]
+position = Vector2( 214, -288 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test77" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test77" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test78" type="Sprite" parent="."]
+position = Vector2( 205, -435 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test78" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test78" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test79" type="Sprite" parent="."]
+position = Vector2( 211, -510 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test79" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test79" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test80" type="Sprite" parent="."]
+position = Vector2( 218, -208 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test80" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test80" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test81" type="Sprite" parent="."]
+position = Vector2( 140, 14 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test81" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test81" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test82" type="Sprite" parent="."]
+position = Vector2( 145, 83 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test82" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test82" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test83" type="Sprite" parent="."]
+position = Vector2( 136, -64 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test83" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test83" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test84" type="Sprite" parent="."]
+position = Vector2( 142, -139 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test84" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test84" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test85" type="Sprite" parent="."]
+position = Vector2( 149, 163 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test85" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test85" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test86" type="Sprite" parent="."]
+position = Vector2( 133, -357 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test86" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test86" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test87" type="Sprite" parent="."]
+position = Vector2( 138, -288 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test87" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test87" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test88" type="Sprite" parent="."]
+position = Vector2( 129, -435 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test88" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test88" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test89" type="Sprite" parent="."]
+position = Vector2( 135, -510 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test89" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test89" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test90" type="Sprite" parent="."]
+position = Vector2( 142, -208 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test90" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test90" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test91" type="Sprite" parent="."]
+position = Vector2( 64, 14 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test91" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test91" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test92" type="Sprite" parent="."]
+position = Vector2( 69, 83 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test92" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test92" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test93" type="Sprite" parent="."]
+position = Vector2( 60, -64 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test93" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test93" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test94" type="Sprite" parent="."]
+position = Vector2( 66, -139 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test94" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test94" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test95" type="Sprite" parent="."]
+position = Vector2( 73, 163 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test95" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test95" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test96" type="Sprite" parent="."]
+position = Vector2( 57, -357 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test96" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test96" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test97" type="Sprite" parent="."]
+position = Vector2( 62, -288 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test97" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test97" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test98" type="Sprite" parent="."]
+position = Vector2( 53, -435 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test98" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test98" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test99" type="Sprite" parent="."]
+position = Vector2( 59, -510 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test99" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test99" instance=ExtResource( 5 )]
+node = NodePath("..")
+
+[node name="Test100" type="Sprite" parent="."]
+position = Vector2( 66, -208 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="PropertySynchronizer" parent="Test100" instance=ExtResource( 6 )]
+nodePath = NodePath("..")
+propertyPath = "position"
+interpolate = true
+interpolateSpeed = 15.0
+
+[node name="ProcessManager" parent="Test100" instance=ExtResource( 5 )]
+node = NodePath("..")

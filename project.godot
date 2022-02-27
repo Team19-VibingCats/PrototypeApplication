@@ -58,6 +58,12 @@ Down={
  ]
 }
 
+[network]
+
+limits/packet_peer_stream/max_buffer_po2=1024
+limits/websocket_client/max_in_buffer_kb=2048
+limits/websocket_client/max_out_buffer_kb=1024
+
 [physics]
 
 common/enable_pause_aware_picking=true
