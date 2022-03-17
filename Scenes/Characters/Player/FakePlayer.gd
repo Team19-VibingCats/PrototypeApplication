@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 export(NodePath) var characterSprite
 
+var externalVelocity = Vector2(0,0)
+var connectedByRope = false
+
 func _ready():
 	characterSprite = get_node(characterSprite)
 

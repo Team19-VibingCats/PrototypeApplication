@@ -12,6 +12,9 @@ export(NodePath) var characterSprite
 
 var moveDirection = Vector2(0,0)
 var currentVelocity = Vector2(0,0)
+var externalVelocity = Vector2(0,0)
+
+var connectedByRope = false
 
 var currentJumpLength = 0.0
 

@@ -12,6 +12,10 @@ func _ready():
 #	FunctionCallHandler.requestFunctionCall($Body,"setSpriteColor",TokenHandler.color,true)
 	PropertiesHandler.requestPropertySync($Body/Label,"self_modulate",TokenHandler.color,false,true)
 	PropertiesHandler.requestPropertySync($Body/Label,"text",TokenHandler.username,false,true)
+	
+	var lightColor = Color.white.linear_interpolate(TokenHandler.color,0.5)
+	PropertiesHandler.requestPropertySync($Body/Light2D,"color",lightColor,false,true)
+	$Body/Light2D.color = lightColor
 
 func _physics_process(delta):
 	handleInputs()
@@ -33,4 +37,4 @@ func handleInputs():
 	body.setMoveDirection(moveDirection)
 
 func moveCamera(delta):
-	$Camera2D.position = lerp($Camera2D.position,$Body.position,delta*2)
+	$Camera2D.position = lerp($Camera2D.position,$Body.position,delta*6)

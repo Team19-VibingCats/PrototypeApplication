@@ -281,6 +281,13 @@ adjustment_brightness = 0.4
 
 [node name="CurrentScene" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -3693.0
+margin_top = -2284.0
+margin_right = 3775.0
+margin_bottom = 1591.0
+color = Color( 0.121569, 0.121569, 0.121569, 1 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1214, 485 )
 
@@ -295,3 +302,6 @@ environment = SubResource( 29 )
 
 [node name="NPC" parent="." instance=ExtResource( 3 )]
 position = Vector2( 713, -538 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
