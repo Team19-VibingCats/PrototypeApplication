@@ -63,10 +63,10 @@ custom_styles/completion = SubResource( 1 )
 readonly = true
 
 [node name="ColorPicker" type="ColorPicker" parent="Panel"]
-margin_left = 36.333
-margin_top = 25.0
-margin_right = 352.333
-margin_bottom = 487.0
+margin_left = 40.333
+margin_top = 29.0
+margin_right = 356.333
+margin_bottom = 491.0
 presets_visible = false
 
 [node name="CharacterSprite" type="Sprite" parent="."]
