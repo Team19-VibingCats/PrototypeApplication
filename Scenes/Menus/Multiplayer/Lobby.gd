@@ -33,7 +33,7 @@ func _on_RetrieveLobby_request_completed(result, response_code, headers, body):
 func _on_EnterWorld_request_completed(result, response_code, headers, body):
 	if response_code == 200:
 		RequestHandler.tryToConnect()
-		get_tree().change_scene("res://Scenes/Main/MainScene.tscn")
+		get_tree().change_scene("res://Scenes/Main/Level_1.tscn")
 
 
 
