@@ -135,7 +135,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 8 )
 animation = "Fall"
-frame = 1
+frame = 7
 playing = true
 
 [node name="PropertySynchronizer" parent="Body/AnimatedSprite" instance=ExtResource( 4 )]
@@ -144,12 +144,11 @@ propertyPath = "flip_h"
 alwaysSynchronize = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
-visible = false
 shape = SubResource( 4 )
 
 [node name="PropertySynchronizer" parent="Body" instance=ExtResource( 4 )]
 nodePath = NodePath("..")
-propertyPath = "position"
+propertyPath = "global_position"
 interpolate = true
 interpolateSpeed = 10.0
 alwaysSynchronize = true

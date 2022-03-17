@@ -57,15 +57,15 @@ animations = [ {
 "name": "Walk",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 32 ), ExtResource( 40 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 27 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 29 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "Fall",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 22 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 11 ) ],
 "loop": false,
 "name": "Jump",
 "speed": 36.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 32 ), ExtResource( 40 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 27 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 29 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 24.0
 } ]
 
 [node name="Player" type="Node2D"]
@@ -99,5 +99,6 @@ playing = true
 [node name="Light2D" type="Light2D" parent="Body"]
 texture = ExtResource( 41 )
 texture_scale = 0.3
+energy = 1.5
 
 [connection signal="animation_finished" from="Body/AnimatedSprite" to="Body" method="_on_AnimatedSprite_animation_finished"]

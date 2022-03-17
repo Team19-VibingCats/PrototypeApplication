@@ -4,6 +4,8 @@
 
 [node name="Rope" type="Node2D"]
 script = ExtResource( 1 )
+ropeLength = 400.0
+pullForce = 2.0
 
 [node name="RopeAnchor" type="Node2D" parent="."]
 

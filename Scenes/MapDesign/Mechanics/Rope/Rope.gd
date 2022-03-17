@@ -22,7 +22,7 @@ func connectRope(a,b):
 	set_process(true)
 
 func _process(delta):
-	if !is_instance_valid(target1) && !is_instance_valid(target2):
+	if !is_instance_valid(target1) || !is_instance_valid(target2):
 		queue_free()
 		set_process(false)
 		return
@@ -31,15 +31,17 @@ func _process(delta):
 	drawRope()
 
 func drawRope():
-	$RopeAnchor.position = target1.position
-	$RopeAnchor.look_at(target2.position)
-	$RopeAnchor.scale.x = target1.position.distance_to(target2.position)
+	$RopeAnchor.position = target1.global_position
+	$RopeAnchor.look_at(target2.global_position)
+	$RopeAnchor.scale.x = target1.global_position.distance_to(target2.global_position)
 
 func simulateRope(delta):
-	var d = target1.position.distance_to(target2.position)
+	var d = abs(target1.global_position.distance_to(target2.global_position))
+	
 	if d > ropeLength:
-		target1Force = (target2.position - target1.position).normalized()*pullForce
-		target2Force = (target1.position - target2.position).normalized()*pullForce
+		var pullAmount = ((d-ropeLength)*(d-ropeLength))*pullForce
+		target1Force = (target2.global_position - target1.global_position).normalized()*pullAmount
+		target2Force = (target1.global_position - target2.global_position).normalized()*pullAmount
 	else:
 		target1Force = Vector2(0,0)
 		target2Force = Vector2(0,0)
@@ -47,5 +49,7 @@ func simulateRope(delta):
 	applyForces(delta)
 
 func applyForces(delta):
-	target1ActualForce = target1ActualForce.linear_interpolate(target1Force,delta)
-	target2ActualForce = target2ActualForce.linear_interpolate(target2Force,delta)
+	target1ActualForce = target1ActualForce.linear_interpolate(target1Force,delta*5)
+	target2ActualForce = target2ActualForce.linear_interpolate(target2Force,delta*5)
+	target1.externalVelocity += target1ActualForce*delta
+	target2.externalVelocity += target2ActualForce*delta

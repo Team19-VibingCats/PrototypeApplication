@@ -31,7 +31,10 @@ func _physics_process(delta):
 
 func moveBody(delta):
 	#	Applying velocity and dampening
-	currentVelocity.y += gravity*delta
+	if externalVelocity.y >= 0:
+		currentVelocity.y += gravity*delta
+	else:
+		currentVelocity.y += gravity*delta*0.1
 	currentVelocity.x += moveDirection.x*accelaration*delta
 	currentVelocity.x *= damp
 	
@@ -47,6 +50,9 @@ func moveBody(delta):
 	
 	var jumpIntensity = jumpCurve.curve.interpolate(currentJumpLength/jumpLength)
 	currentVelocity.y -= jumpVelocity*jumpIntensity*delta
+	
+	move_and_slide(externalVelocity,Vector2.UP,true,4,0.78,false)
+	externalVelocity = Vector2.ZERO
 	
 #	Moving the body and saving the returned velocity
 	currentVelocity = move_and_slide(currentVelocity,Vector2.UP,true,4,0.78,false)
