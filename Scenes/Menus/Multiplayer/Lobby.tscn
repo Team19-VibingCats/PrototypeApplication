@@ -7,6 +7,8 @@ script = ExtResource( 1 )
 
 [node name="RetrieveLobby" type="HTTPRequest" parent="."]
 
+[node name="EnterWorld" type="HTTPRequest" parent="."]
+
 [node name="LobbyList" type="RichTextLabel" parent="."]
 margin_left = 78.0
 margin_top = 56.0
@@ -28,4 +30,5 @@ __meta__ = {
 }
 
 [connection signal="request_completed" from="RetrieveLobby" to="." method="_on_RetrieveLobby_request_completed"]
+[connection signal="request_completed" from="EnterWorld" to="." method="_on_EnterWorld_request_completed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

@@ -1,9 +1,48 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=50 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Characters/Player/character_prototype.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/CharaterController.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Characters/Player/PlayerController.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Multiplayer/Synchronizers/PropertySynchronizer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0012.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0014.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0002.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0007.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0008.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0003.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0000.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0011.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0013.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0005.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0004.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0009.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0010.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0001.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/walkcycleframe0006.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0002.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0006.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0008.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0003.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0001.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0004.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0007.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0000.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/jumpframe0005.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0000.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0004.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0010.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0003.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0006.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0012.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0008.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0001.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0005.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0009.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0011.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0013.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0014.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0002.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fallframe0007.png" type="Texture" id=43]
 
 [sub_resource type="Curve" id=2]
 _data = [ Vector2( 0, 0.990909 ), 0.0, -3.17549, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
@@ -12,6 +51,54 @@ _data = [ Vector2( 0, 0.990909 ), 0.0, -3.17549, 0, 0, Vector2( 1, 0 ), 0.0, 0.0
 width = 32
 curve = SubResource( 2 )
 
+[sub_resource type="Shader" id=7]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.4.3.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+uniform vec4 targetColor : hint_color;
+uniform vec4 newColor : hint_color;
+
+void fragment() {
+    vec4 col = texture(TEXTURE, UV);
+    vec4 d4 = abs(col - targetColor);
+    float d = max(max(d4.r, d4.g), d4.b);
+    if(d < 0.23) {
+        col = newColor;
+    }
+    COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 7 )
+shader_param/targetColor = Color( 0.168627, 0.803922, 0.752941, 1 )
+shader_param/newColor = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 36.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 36 ), ExtResource( 42 ), ExtResource( 32 ), ExtResource( 30 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 43 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 34 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 24.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 28, 28 )
 
@@ -19,6 +106,7 @@ extents = Vector2( 28, 28 )
 script = ExtResource( 3 )
 
 [node name="Body" type="KinematicBody2D" parent="."]
+collision_layer = 3
 script = ExtResource( 2 )
 gravity = 1000.0
 accelaration = 2000.0
@@ -26,19 +114,38 @@ damp = 0.9
 jumpVelocity = 6000.0
 jumpLength = 0.4
 jumpCurve = SubResource( 3 )
+characterSprite = NodePath("AnimatedSprite")
 
-[node name="Sprite" type="Sprite" parent="Body"]
+[node name="CharacterSprite" type="Sprite" parent="Body"]
+visible = false
+material = SubResource( 6 )
+position = Vector2( 0, 5 )
+scale = Vector2( 0.15, 0.15 )
 z_index = 1
 texture = ExtResource( 1 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Body"]
+position = Vector2( 0, -9.064 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 8 )
+animation = "Fall"
+frame = 13
+playing = true
+
+[node name="PropertySynchronizer" parent="Body/AnimatedSprite" instance=ExtResource( 4 )]
+nodePath = NodePath("..")
+propertyPath = "flip_h"
+alwaysSynchronize = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+visible = false
 shape = SubResource( 4 )
 
 [node name="PropertySynchronizer" parent="Body" instance=ExtResource( 4 )]
 nodePath = NodePath("..")
 propertyPath = "position"
 interpolate = true
-interpolateSpeed = 15.0
+interpolateSpeed = 10.0
 alwaysSynchronize = true
 
 [node name="Label" type="Label" parent="Body"]
@@ -55,6 +162,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Node2D" type="Node2D" parent="Body"]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.5, 0.5 )
 process_mode = 0
+
+[connection signal="hitGround" from="Body" to="Body/PropertySynchronizer" method="forceSynchronize"]
+[connection signal="animation_finished" from="Body/AnimatedSprite" to="Body" method="_on_AnimatedSprite_animation_finished"]

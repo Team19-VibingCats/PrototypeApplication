@@ -30,9 +30,15 @@ func _on_RetrieveLobby_request_completed(result, response_code, headers, body):
 				$LobbyList.text += "\n"
 				$LobbyList.text += player["name"]
 
+func _on_EnterWorld_request_completed(result, response_code, headers, body):
+	if response_code == 200:
+		RequestHandler.tryToConnect()
+		get_tree().change_scene("res://Scenes/Main/MainScene.tscn")
 
 
 
 func _on_StartButton_pressed():
-	RequestHandler.tryToConnect()
-	get_tree().change_scene("res://Scenes/Main/MainScene.tscn")
+	$EnterWorld.request(GlobalConstants.serverAddress+"/player/"+TokenHandler.token+"/enterWorld/"+TokenHandler.worldName, 
+	["Content-Type: application/json"],
+	false, 
+	HTTPClient.METHOD_POST)

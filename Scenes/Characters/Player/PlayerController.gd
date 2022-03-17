@@ -6,10 +6,10 @@ var fake = false
 
 func _ready():
 	name = TokenHandler.username
-	$Body/Sprite.self_modulate = TokenHandler.color
+	$Body.setSpriteColor(TokenHandler.color)
 	
 	FunctionCallHandler.requestFunctionCall(FakeObjectHandler,"instanceObject",{"instance": "player","name": name},true)
-	PropertiesHandler.requestPropertySync($Body/Sprite,"self_modulate",TokenHandler.color,false,true)
+#	FunctionCallHandler.requestFunctionCall($Body,"setSpriteColor",TokenHandler.color,true)
 	PropertiesHandler.requestPropertySync($Body/Label,"self_modulate",TokenHandler.color,false,true)
 	PropertiesHandler.requestPropertySync($Body/Label,"text",TokenHandler.username,false,true)
 

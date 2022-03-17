@@ -28,8 +28,14 @@ func startSynchronize():
 func stopSynchronize():
 	set_process(false)
 
-func synchronize():
-	if !validNode() || waitingForSync: return
+func forceSynchronize(forceInterpolate = false):
+	var previousInterpolate = interpolate
+	interpolate = forceInterpolate
+	synchronize(true)
+	interpolate = previousInterpolate
+
+func synchronize(forced = false):
+	if !validNode() || (waitingForSync && !forced): return
 	
 	waitingForSync = true
 	
