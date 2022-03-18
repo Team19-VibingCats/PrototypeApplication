@@ -8,7 +8,8 @@ export var damp = 1.0
 export var jumpVelocity = 1.0
 export var jumpLength = 1.0
 export(CurveTexture) var jumpCurve
-export(NodePath) var characterSprite
+export(Array,NodePath) var characterSpritePaths
+var characterSprites = []
 
 var moveDirection = Vector2(0,0)
 var currentVelocity = Vector2(0,0)
@@ -22,7 +23,9 @@ var touchingGround = false
 var justJumped = false
 
 func _ready():
-	characterSprite = get_node(characterSprite)
+	for spritePath in characterSpritePaths:
+		characterSprites.append(get_node(spritePath))
+		get_node(spritePath).frame = 0
 
 func _physics_process(delta):
 	groundDetection()
@@ -81,13 +84,16 @@ func handleSprite():
 	else:
 		playAnimation({"Animation": "Walk", "Reset": false, "Block": false})
 		var flip = moveDirection.x > 0
-		characterSprite.flip_h = flip
+		
+		for sprite in characterSprites:
+			sprite.flip_h = flip
 
 func playAnimation(animationData):
 	if animationBlocked: return
 	
-	if animationData["Reset"]: characterSprite.stop()
-	characterSprite.play(animationData["Animation"])
+	for sprite in characterSprites:
+		if animationData["Reset"]: sprite.stop()
+		sprite.play(animationData["Animation"])
 	
 	if animationData["Block"]:
 		animationBlocked = true
@@ -96,11 +102,3 @@ func playAnimation(animationData):
 
 func _on_AnimatedSprite_animation_finished():
 	animationBlocked = false
-
-func setSpriteColor(color):
-	pass
-#	for sprite in sprites:
-#		if sprite.material != null:
-#			var newMaterial = sprite.material.duplicate()
-#			newMaterial.set("shader_param/newColor",color)
-#			sprite.material = newMaterial

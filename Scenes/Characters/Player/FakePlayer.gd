@@ -1,12 +1,15 @@
 extends KinematicBody2D
 
-export(NodePath) var characterSprite
+export(Array,NodePath) var characterSpritePaths
+var characterSprites = []
 
 var externalVelocity = Vector2(0,0)
 var connectedByRope = false
 
 func _ready():
-	characterSprite = get_node(characterSprite)
+	for spritePath in characterSpritePaths:
+		characterSprites.append(get_node(spritePath))
+		get_node(spritePath).frame = 0
 
 func _enter_tree():
 	GlobalVariables.playerCount += 1
@@ -20,8 +23,9 @@ var animationBlocked = false
 func playAnimation(animationData):
 	if animationBlocked: return
 	
-	if animationData["Reset"]: characterSprite.stop()
-	characterSprite.play(animationData["Animation"])
+	for sprite in characterSprites:
+		if animationData["Reset"]: sprite.stop()
+		sprite.play(animationData["Animation"])
 	
 	if animationData["Block"]:
 		animationBlocked = true

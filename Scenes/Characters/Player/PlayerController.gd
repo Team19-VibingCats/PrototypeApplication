@@ -6,16 +6,14 @@ var fake = false
 
 func _ready():
 	name = TokenHandler.username
-	$Body.setSpriteColor(TokenHandler.color)
 	
 	FunctionCallHandler.requestFunctionCall(FakeObjectHandler,"instanceObject",{"instance": "player","name": name},true)
 #	FunctionCallHandler.requestFunctionCall($Body,"setSpriteColor",TokenHandler.color,true)
 	PropertiesHandler.requestPropertySync($Body/Label,"self_modulate",TokenHandler.color,false,true)
 	PropertiesHandler.requestPropertySync($Body/Label,"text",TokenHandler.username,false,true)
 	
-	var lightColor = Color.white.linear_interpolate(TokenHandler.color,0.5)
-	PropertiesHandler.requestPropertySync($Body/Light2D,"color",lightColor,false,true)
-	$Body/Light2D.color = lightColor
+	PropertiesHandler.requestPropertySync($Body/Mantel,"modulate",TokenHandler.color,false,true)
+	$Body/Mantel.modulate = TokenHandler.color
 
 func _physics_process(delta):
 	handleInputs()
