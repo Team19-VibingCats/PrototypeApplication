@@ -32,3 +32,7 @@ func playAnimation(animationData):
 
 func _on_AnimatedSprite_animation_finished():
 	animationBlocked = false
+
+func playSpinParticles():
+	$Particles2D.emitting = true
+	$Particles2D2.emitting = true

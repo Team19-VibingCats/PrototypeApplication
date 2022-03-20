@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=136 format=2]
 
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/lines/walk0001.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/Player/FakePlayer.gd" type="Script" id=2]
@@ -83,6 +83,7 @@
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/lines/walk0012.png" type="Texture" id=81]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/fur/fur0004.png" type="Texture" id=82]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/lines/walk0014.png" type="Texture" id=83]
+[ext_resource path="res://Assets/Textures/Lights/SmallLight.png" type="Texture" id=84]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/mantel/mantelFall0014.png" type="Texture" id=85]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/lines/lines0008.png" type="Texture" id=86]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Fall/mantel/mantelFall0004.png" type="Texture" id=87]
@@ -198,13 +199,63 @@ animations = [ {
 "speed": 25.0
 } ]
 
+[sub_resource type="Gradient" id=17]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 17 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+initial_velocity = 210.97
+initial_velocity_random = 0.77
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 37.88
+scale = 0.02
+color_ramp = SubResource( 16 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "Spin"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
+}
+
 [node name="Player" type="Node2D"]
 
 [node name="Body" type="KinematicBody2D" parent="."]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource( 2 )
-characterSpritePaths = [ NodePath("Fur"), NodePath("Mantel"), NodePath("Lines") ]
+characterSpritePaths = [ NodePath("Sprites/Fur"), NodePath("Sprites/Mantel"), NodePath("Sprites/Lines") ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 shape = SubResource( 1 )
@@ -223,28 +274,57 @@ clip_text = true
 texture = ExtResource( 41 )
 texture_scale = 0.3
 
-[node name="Fur" type="AnimatedSprite" parent="Body"]
+[node name="Sprites" type="Node2D" parent="Body"]
+
+[node name="Fur" type="AnimatedSprite" parent="Body/Sprites"]
 position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 2 )
 animation = "Fall"
-frame = 7
+frame = 11
 playing = true
 
-[node name="Mantel" type="AnimatedSprite" parent="Body"]
+[node name="Mantel" type="AnimatedSprite" parent="Body/Sprites"]
 position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 3 )
 animation = "Fall"
-frame = 9
+frame = 13
 playing = true
 
-[node name="Lines" type="AnimatedSprite" parent="Body"]
+[node name="Lines" type="AnimatedSprite" parent="Body/Sprites"]
 position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 4 )
 animation = "Fall"
-frame = 7
+frame = 11
 playing = true
 
-[connection signal="animation_finished" from="Body/Lines" to="Body" method="_on_AnimatedSprite_animation_finished"]
+[node name="Particles2D" type="Particles2D" parent="Body"]
+rotation = 1.57079
+emitting = false
+amount = 16
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.5
+local_coords = false
+process_material = SubResource( 18 )
+texture = ExtResource( 84 )
+
+[node name="Particles2D2" type="Particles2D" parent="Body"]
+rotation = -1.57079
+emitting = false
+amount = 16
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.5
+local_coords = false
+process_material = SubResource( 18 )
+texture = ExtResource( 84 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 1.5
+anims/RESET = SubResource( 5 )
+anims/Spin = SubResource( 14 )
+
+[connection signal="animation_finished" from="Body/Sprites/Lines" to="Body" method="_on_AnimatedSprite_animation_finished"]

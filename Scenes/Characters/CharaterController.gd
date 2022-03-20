@@ -7,6 +7,7 @@ export var accelaration = 1.0
 export var damp = 1.0
 export var jumpVelocity = 1.0
 export var jumpLength = 1.0
+export var spinHeightBoost = 200.0
 export(CurveTexture) var jumpCurve
 export(Array,NodePath) var characterSpritePaths
 var characterSprites = []
@@ -32,6 +33,22 @@ func _physics_process(delta):
 	moveBody(delta)
 	handleSprite()
 
+var justSpinned = false
+func spin():
+	var animationPlayer = get_parent().get_node("AnimationPlayer")
+	
+	if !animationPlayer.is_playing() && !justSpinned:
+		justSpinned = true
+		animationPlayer.play("Spin")
+		FunctionCallHandler.requestFunctionCall(animationPlayer,"play","Spin")
+		
+		if !touchingGround:
+			if currentVelocity.y > 0: currentVelocity.y = 0
+			currentVelocity.y -= spinHeightBoost
+			$Particles2D.emitting = true
+			$Particles2D2.emitting = true
+			FunctionCallHandler.requestFunctionCall(self,"playSpinParticles")
+
 func moveBody(delta):
 	#	Applying velocity and dampening
 	if externalVelocity.y >= 0:
@@ -45,9 +62,9 @@ func moveBody(delta):
 	if moveDirection.y == 1 && !is_on_ceiling():
 		if touchingGround:
 			currentJumpLength = 0.0
+			playAnimation({"Animation": "Jump", "Reset": true, "Block": true})
 		else:
 			currentJumpLength = clamp(currentJumpLength+delta,0,jumpLength)
-			playAnimation({"Animation": "Jump", "Reset": true, "Block": true})
 	else:
 		currentJumpLength = jumpLength
 	
@@ -66,6 +83,7 @@ func groundDetection():
 			emit_signal("hitGround")
 	
 	touchingGround = is_on_floor()
+	if touchingGround: justSpinned = false
 
 func setMoveDirection(direction):
 	moveDirection = direction

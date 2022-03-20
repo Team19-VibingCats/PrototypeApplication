@@ -5,7 +5,7 @@ var worldName = ""
 var username = ""
 var color = Color.white
 
-var host = false
+var host = true
 
 var loggedIn = false
 

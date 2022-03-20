@@ -58,6 +58,11 @@ Down={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777234,"unicode":0,"echo":false,"script":null)
  ]
 }
+spin={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -66,9 +71,8 @@ Down={
 
 [network]
 
-limits/packet_peer_stream/max_buffer_po2=1024
-limits/websocket_client/max_in_buffer_kb=2048
-limits/websocket_client/max_out_buffer_kb=1024
+limits/websocket_client/max_in_buffer_kb=256
+limits/websocket_client/max_out_buffer_kb=256
 
 [physics]
 

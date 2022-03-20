@@ -12,8 +12,8 @@ func _ready():
 	PropertiesHandler.requestPropertySync($Body/Label,"self_modulate",TokenHandler.color,false,true)
 	PropertiesHandler.requestPropertySync($Body/Label,"text",TokenHandler.username,false,true)
 	
-	PropertiesHandler.requestPropertySync($Body/Mantel,"modulate",TokenHandler.color,false,true)
-	$Body/Mantel.modulate = TokenHandler.color
+	PropertiesHandler.requestPropertySync($Body/Sprites/Mantel,"modulate",TokenHandler.color,false,true)
+	$Body/Sprites/Mantel.modulate = TokenHandler.color
 
 func _physics_process(delta):
 	handleInputs()
@@ -31,6 +31,9 @@ func handleInputs():
 		moveDirection.y += 1
 	if Input.is_action_pressed("Down"):
 		moveDirection.y -= 1
+	
+	if Input.is_action_pressed("spin"):
+		body.spin()
 	
 	body.setMoveDirection(moveDirection)
 
