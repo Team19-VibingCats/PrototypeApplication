@@ -1,6 +1,7 @@
 extends Node
 
 var player = preload("res://Scenes/Characters/Player/FakePlayer.tscn")
+var rope = preload("res://Scenes/MapDesign/Mechanics/GrapplingRope/FakeGrapplingRope.tscn")
 
 func instanceObject(data):
 	if data["name"] == TokenHandler.username: return

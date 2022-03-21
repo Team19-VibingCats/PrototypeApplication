@@ -283,7 +283,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 2 )
 animation = "Fall"
-frame = 1
+frame = 5
 playing = true
 
 [node name="Mantel" type="AnimatedSprite" parent="Body/Sprites"]
@@ -291,7 +291,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 3 )
 animation = "Fall"
-frame = 3
+frame = 7
 playing = true
 
 [node name="Lines" type="AnimatedSprite" parent="Body/Sprites"]
@@ -299,7 +299,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 4 )
 animation = "Fall"
-frame = 1
+frame = 5
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="Body"]

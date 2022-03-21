@@ -84,6 +84,7 @@ func sendPendingRequests():
 
 func alertSynchronizers():
 	for synchronizer in waitingSynchronizers:
-		synchronizer.waitingForSync = false
+		if is_instance_valid(synchronizer):
+			synchronizer.waitingForSync = false
 	
 	waitingSynchronizers.clear()

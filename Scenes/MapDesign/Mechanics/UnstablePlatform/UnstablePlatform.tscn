@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/MapDesign/Mechanics/UnstablePlatform/UnstablePlatform.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/MapDesign/Detectors/PlayerDetectionArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 48, 5 )
+
+[node name="UnstablePlatform" type="Node2D"]
+script = ExtResource( 1 )
+spritePaths = [ NodePath("Sprite"), NodePath("Sprite2"), NodePath("Sprite3") ]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 1.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+modulate = Color( 0.0313726, 1, 0, 1 )
+scale = Vector2( 1.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="PlayerDetectionArea" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea"]
+position = Vector2( 0, -16.802 )
+shape = SubResource( 2 )
+
+[connection signal="playerCountChanged" from="PlayerDetectionArea" to="." method="_on_PlayerDetectionArea_playerCountChanged"]
