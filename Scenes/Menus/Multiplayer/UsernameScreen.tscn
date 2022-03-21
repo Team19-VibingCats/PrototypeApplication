@@ -52,10 +52,10 @@ margin_bottom = 275.0
 text = "Confirm"
 
 [node name="Panel" type="TextEdit" parent="."]
-margin_left = 482.667
-margin_top = 280.0
-margin_right = 837.67
-margin_bottom = 594.0
+margin_left = 520.0
+margin_top = -24.0
+margin_right = 875.003
+margin_bottom = 290.0
 custom_styles/read_only = SubResource( 1 )
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
@@ -63,10 +63,10 @@ custom_styles/completion = SubResource( 1 )
 readonly = true
 
 [node name="ColorPicker" type="ColorPicker" parent="Panel"]
-margin_left = 56.333
-margin_top = 45.0
-margin_right = 372.333
-margin_bottom = 507.0
+margin_left = 41.333
+margin_top = 36.0
+margin_right = 357.333
+margin_bottom = 498.0
 presets_visible = false
 
 [node name="CharacterSprite" type="Sprite" parent="."]

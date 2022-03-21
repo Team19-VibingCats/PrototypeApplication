@@ -377,7 +377,6 @@ polygon = PoolVector2Array( 32, -8, 73, -20, 78, -11, 31, 4 )
 [node name="StaticBody2D10" type="StaticBody2D" parent="Bridges"]
 position = Vector2( -2772, 180 )
 rotation = -0.188132
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bridges/StaticBody2D10"]
 position = Vector2( -54, 2 )
@@ -432,7 +431,6 @@ polygon = PoolVector2Array( 32, -8, 73, -20, 78, -11, 31, 4 )
 [node name="StaticBody2D22" type="StaticBody2D" parent="Bridges"]
 position = Vector2( 174, 182 )
 rotation = -0.188132
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bridges/StaticBody2D22"]
 position = Vector2( -54, 2 )
@@ -487,7 +485,6 @@ polygon = PoolVector2Array( 32, -8, 73, -20, 78, -11, 31, 4 )
 [node name="StaticBody2D16" type="StaticBody2D" parent="Bridges"]
 position = Vector2( -2187, 146 )
 rotation = -0.188132
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bridges/StaticBody2D16"]
 position = Vector2( -54, 2 )

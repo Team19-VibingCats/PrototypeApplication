@@ -43,11 +43,18 @@ func spin():
 		FunctionCallHandler.requestFunctionCall(animationPlayer,"play","Spin")
 		
 		if !touchingGround:
-			if currentVelocity.y > 0: currentVelocity.y = 0
-			currentVelocity.y -= spinHeightBoost
-			$Particles2D.emitting = true
-			$Particles2D2.emitting = true
-			FunctionCallHandler.requestFunctionCall(self,"playSpinParticles")
+			if currentVelocity.y > 0: 
+				currentVelocity.y = 0
+				currentVelocity.y -= spinHeightBoost*2
+			else:
+				currentVelocity.y -= spinHeightBoost
+			
+			playSpinParticles()
+
+func playSpinParticles():
+	$Particles2D.emitting = true
+	$Particles2D2.emitting = true
+	FunctionCallHandler.requestFunctionCall(self,"playSpinParticles")
 
 func moveBody(delta):
 	#	Applying velocity and dampening
@@ -63,6 +70,11 @@ func moveBody(delta):
 		if touchingGround:
 			currentJumpLength = 0.0
 			playAnimation({"Animation": "Jump", "Reset": true, "Block": true})
+			
+			if get_parent().get_node("AnimationPlayer").is_playing():
+				playSpinParticles()
+				currentVelocity.y -= spinHeightBoost
+				justSpinned = true
 		else:
 			currentJumpLength = clamp(currentJumpLength+delta,0,jumpLength)
 	else:

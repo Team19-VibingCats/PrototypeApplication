@@ -142,15 +142,15 @@ animations = [ {
 "name": "Fall",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 50 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 42 ), ExtResource( 26 ), ExtResource( 43 ), ExtResource( 48 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 28 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 35.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 58 ), ExtResource( 68 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 73 ), ExtResource( 56 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 60 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 42 ), ExtResource( 26 ), ExtResource( 43 ), ExtResource( 48 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 35.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -165,15 +165,15 @@ animations = [ {
 "name": "Fall",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 109 ), ExtResource( 102 ), ExtResource( 118 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 122 ), ExtResource( 124 ), ExtResource( 123 ), ExtResource( 121 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 35.0
-}, {
 "frames": [ ExtResource( 88 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 96 ), ExtResource( 91 ), ExtResource( 105 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 116 ), ExtResource( 92 ), ExtResource( 111 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 101 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 109 ), ExtResource( 102 ), ExtResource( 118 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 122 ), ExtResource( 124 ), ExtResource( 123 ), ExtResource( 121 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 35.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -188,15 +188,15 @@ animations = [ {
 "name": "Fall",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 36 ), ExtResource( 49 ), ExtResource( 22 ), ExtResource( 47 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 44 ), ExtResource( 25 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 32 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 35.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 52 ), ExtResource( 62 ), ExtResource( 10 ), ExtResource( 63 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 81 ), ExtResource( 12 ), ExtResource( 83 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 49 ), ExtResource( 22 ), ExtResource( 47 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 44 ), ExtResource( 25 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 32 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 35.0
 } ]
 
 [sub_resource type="Gradient" id=17]
@@ -273,6 +273,8 @@ clip_text = true
 [node name="Light2D" type="Light2D" parent="Body"]
 texture = ExtResource( 41 )
 texture_scale = 0.3
+energy = 1.2
+mode = 2
 
 [node name="Sprites" type="Node2D" parent="Body"]
 
@@ -281,7 +283,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 2 )
 animation = "Fall"
-frame = 11
+frame = 1
 playing = true
 
 [node name="Mantel" type="AnimatedSprite" parent="Body/Sprites"]
@@ -289,7 +291,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 3 )
 animation = "Fall"
-frame = 13
+frame = 3
 playing = true
 
 [node name="Lines" type="AnimatedSprite" parent="Body/Sprites"]
@@ -297,7 +299,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 4 )
 animation = "Fall"
-frame = 11
+frame = 1
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="Body"]

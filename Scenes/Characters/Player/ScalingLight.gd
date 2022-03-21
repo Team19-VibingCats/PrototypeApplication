@@ -8,7 +8,9 @@ func _process(delta):
 func _on_PlayerDetectionArea_playerCountChanged(amount):
 	var effectiveness = 1
 	
-	targetScale = 0.0
+	targetScale = 0.2
+	amount -= 1
+	
 	for i in amount:
-		targetScale += 0.2*effectiveness
+		targetScale += 0.3*effectiveness
 		effectiveness *= 0.7
