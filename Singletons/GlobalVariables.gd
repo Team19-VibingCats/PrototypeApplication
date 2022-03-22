@@ -1,8 +1,21 @@
 extends Node
 
 var playerNames = []
-var playerCount = 1
+var playerCount = 1 setget playerCountChanged
+var playerCountListeners = []
 
 var fakePlayers = []
 
 var initialPlayerSync = false
+
+func playerCountChanged(amount):
+	playerCount = amount
+	
+	for listener in playerCountListeners:
+		listener.playerCountChanged(amount)
+
+func registerPlayerCountListener(listener):
+	playerCountListeners.append(listener)
+
+func deregisterPlayerCountListener(listener):
+	playerCountListeners.erase(listener)

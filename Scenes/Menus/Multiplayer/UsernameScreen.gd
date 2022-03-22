@@ -10,4 +10,4 @@ func _on_Button_pressed():
 		get_tree().change_scene("res://Scenes/Menus/Multiplayer/WorldScreen.tscn")
 
 func _process(delta):
-	$CharacterSprite.material.set("shader_param/newColor",$Panel/ColorPicker.color)
+	$Mantel.modulate = $Panel/ColorPicker.color

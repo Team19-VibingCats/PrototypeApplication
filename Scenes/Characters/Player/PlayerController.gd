@@ -2,6 +2,9 @@ extends Node2D
 
 onready var body = $Body
 
+export var hasLight = false
+export var hasRope = false
+
 var fake = false
 
 func _ready():
@@ -17,6 +20,11 @@ func _ready():
 		PropertiesHandler.requestPropertySync($Body/Sprites/Mantel,"modulate",TokenHandler.color,false,true)
 	
 	$Body/Sprites/Mantel.modulate = TokenHandler.color
+	
+	if !hasLight:
+		$Body/Light2D.visible = false
+	if !hasRope:
+		$Body/RopeThrower.queue_free()
 
 func _physics_process(delta):
 	handleInputs()

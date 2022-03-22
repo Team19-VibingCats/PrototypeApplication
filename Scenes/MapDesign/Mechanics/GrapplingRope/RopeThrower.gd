@@ -52,7 +52,7 @@ func instanceRope():
 	
 	var player = get_parent()
 	currentRope = ropeScene.instance()
-	currentRope.name = "Rope"+TokenHandler.name
+	currentRope.name = "Rope"+TokenHandler.username
 	
 	get_tree().current_scene.add_child(currentRope)
 	currentRope.global_position = $Target.global_position
@@ -60,7 +60,7 @@ func instanceRope():
 	loosenPlayer()
 
 func deleteRope():
-	if currentRope != null:
+	if currentRope != null && is_instance_valid(currentRope):
 		currentRope.queue_free()
 		currentRope = null
 		rigidPlayer()

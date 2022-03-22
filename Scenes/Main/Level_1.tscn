@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Assets/Textures/Characters/NPC/Axi.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Textures/Lights/SmallLight.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/MapDesign/Mechanics/Transitions/LevelTransition.tscn" type="PackedScene" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/Other/Waterfall.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Textures/Other/Steam.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -412,7 +415,7 @@ curve = SubResource( 38 )
 [sub_resource type="ParticlesMaterial" id=37]
 lifetime_randomness = 0.43
 emission_shape = 1
-emission_sphere_radius = 27.88
+emission_sphere_radius = 46.23
 flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
 orbit_velocity = 0.69
@@ -422,6 +425,397 @@ scale = 0.02
 scale_random = 0.09
 scale_curve = SubResource( 39 )
 color = Color( 0.498039, 1, 0.956863, 1 )
+
+[sub_resource type="ShaderMaterial" id=46]
+shader = SubResource( 30 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 10.0
+shader_param/beam_size = 0.058
+shader_param/color = Color( 0, 1.02, 1.2, 1 )
+
+[sub_resource type="Animation" id=40]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "Remove"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2D:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.545098, 0.913725, 1, 1 ), Color( 0.545098, 0.913725, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.6, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="ShaderMaterial" id=47]
+shader = SubResource( 30 )
+shader_param/progress = 0.0
+shader_param/noise_desnity = 10.0
+shader_param/beam_size = 0.058
+shader_param/color = Color( 0, 1.02, 1.2, 1 )
+
+[sub_resource type="Animation" id=44]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=45]
+resource_name = "Remove"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2D:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.545098, 0.913725, 1, 1 ), Color( 0.545098, 0.913725, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.6, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Shader" id=50]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/2d-waterfall
+
+Feel free to improve and change this shader according to your needs
+and consider sharing the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform vec2 scale; // Used for sprite script. Don't edit this value in the inspector.
+uniform float zoom; // Used for sprite script. Don't edit this value in the inspector.
+
+uniform sampler2D refraction_map;
+uniform sampler2D water_mask;
+
+uniform vec2 gap_stretch = vec2(0.8, 0.05);
+uniform vec2 refraction_stretch = vec2(2.0, 0.8);
+uniform float refraction_strength : hint_range(0.0, 0.1) = 0.02;
+
+uniform vec4 water_tint : hint_color = vec4(0.2, 0.6, 1.0, 0.1);
+uniform vec4 water_highlight : hint_color = vec4(1.0, 1.0, 1.0, 0.3);
+uniform float speed = 1.0;
+uniform float flow_gaps : hint_range(0.0, 1.0) = 0.33;
+uniform float highlight_width : hint_range(0.0, 0.3) = 0.02;
+
+void fragment()
+{
+	// Get the two noise textures and make them move on the y axis. The gaps move twice as fast as the refraction, but you can tweak this by changing (speed * 0.5)
+	vec2 refraction_offset = texture(refraction_map, vec2(UV.x, UV.y + -TIME * speed * 0.5) * scale * refraction_stretch).xy;
+	vec2 gap_mask = texture(water_mask, vec2(UV.x, UV.y + -TIME * speed) * scale * gap_stretch).xy;
+	
+	// Set values between -0.5 and 0.5 (instead of 0 and 1). Otherwise the reflection will move whith increased refraction_strength
+	refraction_offset -= 0.5; 
+	
+	// Get the screen texture and distort it
+	vec4 refraction = texture(SCREEN_TEXTURE, SCREEN_UV - refraction_offset * refraction_strength * zoom);
+	
+	
+	// Create holes and apply colors and textures //
+	
+	vec4 color = vec4(1.0);
+	
+	// Define what values will be the water highlight color (the gap border)
+	float inner_edge = flow_gaps + highlight_width;
+	
+	// See if the pixel is within the edges range and use the water colors alpha to blend between showing color or refraction texture.
+	if (gap_mask.x < inner_edge)
+	{
+		color.rgb = mix(refraction.rgb, water_highlight.rgb, water_highlight.a);
+	}
+	else
+	{
+		color.rgb = mix(refraction.rgb, water_tint.rgb, water_tint.a);
+	}
+	
+	// If the value is below the gap threshhold make it transparent (a gap)
+	if (gap_mask.x < flow_gaps)
+	{
+		color.a = 0.0;
+	}
+	
+	
+	// Crate Edge Shape //
+	
+	// Set the shape for the top and bottom edges. Use water_mask as shape but with other values to flatten it out horizontally. 
+	vec2 water_edge = texture(water_mask, vec2(UV.x, UV.y + -TIME * 0.1) * scale * vec2(0.15, 0.6)).xy;
+	water_edge -= 0.5;
+	
+	// Use the same mask as for the gaps for left and right edge.
+	vec2 vertical_edge_mask = gap_mask - 0.5;
+	
+	// Apply the new masks to the edges. This will make the wobble effect.
+	color.a = mix(0.0, color.a, step(UV.x + vertical_edge_mask.x * 0.2, 0.92)); // Right edge
+	color.a = mix(color.a, 0.0, step(UV.x - vertical_edge_mask.x * 0.2, 0.08)); // Left edge
+	
+	color.a = mix(0.0, color.a, step(UV.y + water_edge.y * 0.1, 0.95));  //Bottom edge
+	color.a = mix(color.a, 0.0, step(UV.y - water_edge.y * 0.05, 0.05)); //Top edge
+	
+	COLOR = color;
+}"
+
+[sub_resource type="OpenSimplexNoise" id=51]
+
+[sub_resource type="NoiseTexture" id=52]
+seamless = true
+noise = SubResource( 51 )
+
+[sub_resource type="OpenSimplexNoise" id=53]
+
+[sub_resource type="NoiseTexture" id=54]
+width = 2048
+height = 2048
+seamless = true
+noise = SubResource( 53 )
+noise_offset = Vector2( 16.396, 12.458 )
+
+[sub_resource type="ShaderMaterial" id=55]
+shader = SubResource( 50 )
+shader_param/scale = Vector2( 1.169, 3.569 )
+shader_param/zoom = 0.235969
+shader_param/gap_stretch = Vector2( 0.8, 0.05 )
+shader_param/refraction_stretch = Vector2( 2, 0.8 )
+shader_param/refraction_strength = 0.015
+shader_param/water_tint = Color( 0.2, 0.6, 1, 0.101961 )
+shader_param/water_highlight = Color( 0.678431, 0.839216, 1, 0.164706 )
+shader_param/speed = 1.0
+shader_param/flow_gaps = 0.33
+shader_param/highlight_width = 0.05
+shader_param/refraction_map = SubResource( 52 )
+shader_param/water_mask = SubResource( 54 )
+
+[sub_resource type="Gradient" id=56]
+offsets = PoolRealArray( 0, 0.217391, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=57]
+gradient = SubResource( 56 )
+
+[sub_resource type="Curve" id=58]
+_data = [ Vector2( 0.0163043, 0 ), 0.0, 3.5478, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=59]
+curve = SubResource( 58 )
+
+[sub_resource type="ParticlesMaterial" id=60]
+emission_shape = 2
+emission_box_extents = Vector3( 88.849, 4.256, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 80.47
+gravity = Vector3( 0, -30.435, 0 )
+initial_velocity = 65.24
+initial_velocity_random = 0.51
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.36
+scale_curve = SubResource( 59 )
+color = Color( 0.796078, 0.933333, 1, 0.152941 )
+color_ramp = SubResource( 57 )
+
+[sub_resource type="Shader" id=48]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/god-rays
+
+Feel free to use, improve and change this shader according to your needs
+and consider sharing the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float angle = -0.3;
+uniform float position = -0.2;
+uniform float spread : hint_range(0.0, 1.0) = 0.5;
+uniform float cutoff : hint_range(-1.0, 1.0) = 0.1;
+uniform float falloff : hint_range(0.0, 1.0) = 0.2;
+uniform float edge_fade : hint_range(0.0, 1.0) = 0.15;
+
+uniform float speed = 1.0;
+uniform float ray1_density = 8.0;
+uniform float ray2_density = 30.0;
+uniform float ray2_intensity : hint_range(0.0, 1.0) = 0.3;
+
+uniform vec4 color : hint_color = vec4(1.0, 0.9, 0.65, 0.8);
+
+uniform bool hdr = false;
+uniform float seed = 5.0;
+
+// Random and noise functions from Book of Shader's chapter on Noise.
+float random(vec2 _uv) {
+    return fract(sin(dot(_uv.xy,
+                         vec2(12.9898, 78.233))) *
+        43758.5453123);
+}
+
+float noise (in vec2 uv) {
+    vec2 i = floor(uv);
+    vec2 f = fract(uv);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve. Same as SmoothStep()
+    vec2 u = f * f * (3.0-2.0 * f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+mat2 rotate(float _angle){
+    return mat2(vec2(cos(_angle), -sin(_angle)),
+                vec2(sin(_angle), cos(_angle)));
+}
+
+vec4 screen(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) * (1.0 - blend);
+}
+
+void fragment()
+{
+	
+	// Rotate, skew and move the UVs
+	vec2 transformed_uv = ( rotate(angle) * (UV - position) )  / ( (UV.y + spread) - (UV.y * spread) );
+	
+	// Animate the ray according the the new transformed UVs
+	vec2 ray1 = vec2(transformed_uv.x * ray1_density + sin(TIME * 0.1 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	vec2 ray2 = vec2(transformed_uv.x * ray2_density + sin(TIME * 0.2 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	
+	// Cut off the ray's edges
+	float cut = step(cutoff, transformed_uv.x) * step(cutoff, 1.0 - transformed_uv.x);
+	ray1 *= cut;
+	ray2 *= cut;
+	
+	// Apply the noise pattern (i.e. create the rays)
+	float rays;
+	
+	if (hdr){
+		// This is not really HDR, but check this to not clamp the two merged rays making 
+		// their values go over 1.0. Can make for some nice effect
+		rays = noise(ray1) + (noise(ray2) * ray2_intensity);
+	}
+	else{
+		 rays = clamp(noise(ray1) + (noise(ray2) * ray2_intensity), 0., 1.);
+	}
+	
+	// Fade out edges
+	rays *= smoothstep(0.0, falloff, (1.0 - UV.y)); // Bottom
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, transformed_uv.x); // Left
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, 1.0 - transformed_uv.x); // Right
+	
+	// Color to the rays
+	vec3 shine = vec3(rays) * color.rgb;
+
+	// Try different blending modes for a nicer effect. \"Screen\" is included in the code,
+	// but take a look at https://godotshaders.com/snippet/blending-modes/ for more.
+	// With \"Screen\" blend mode:
+	shine = screen(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+	
+	COLOR = vec4(shine, rays * color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=49]
+shader = SubResource( 48 )
+shader_param/angle = -0.3
+shader_param/position = -0.2
+shader_param/spread = 0.5
+shader_param/cutoff = 0.075
+shader_param/falloff = 0.682
+shader_param/edge_fade = 0.15
+shader_param/speed = 1.0
+shader_param/ray1_density = 8.0
+shader_param/ray2_density = 30.0
+shader_param/ray2_intensity = 0.3
+shader_param/color = Color( 1, 0.901961, 0.65098, 0.356863 )
+shader_param/hdr = true
+shader_param/seed = 5.0
 
 [node name="CurrentScene" type="Node2D"]
 
@@ -433,7 +827,8 @@ margin_bottom = 1200.0
 color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1214, 485 )
+position = Vector2( 1256, 489 )
+hasLight = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -457,8 +852,8 @@ mode = 2
 
 [node name="Sprite" type="Sprite" parent="NPC"]
 material = SubResource( 31 )
-position = Vector2( -1, -6.382 )
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( -1, -21.9999 )
+scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]
@@ -467,18 +862,136 @@ anims/Remove = SubResource( 33 )
 
 [node name="Particles2D" type="Particles2D" parent="NPC"]
 material = SubResource( 34 )
-position = Vector2( 5, -4 )
+position = Vector2( 5, -16.996 )
 emitting = false
-amount = 100
+amount = 200
 one_shot = true
 explosiveness = 0.23
 process_material = SubResource( 37 )
 texture = ExtResource( 6 )
 
+[node name="NPC2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2009, -378 )
+dialogName = "Axi2"
+
+[node name="Light2D" type="Light2D" parent="NPC2"]
+position = Vector2( -33, -13 )
+texture = ExtResource( 4 )
+texture_scale = 0.2
+energy = 1.2
+mode = 2
+
+[node name="Sprite" type="Sprite" parent="NPC2"]
+material = SubResource( 46 )
+position = Vector2( -1, -21.9999 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 5 )
+flip_h = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC2"]
+anims/RESET = SubResource( 40 )
+anims/Remove = SubResource( 41 )
+
+[node name="Particles2D" type="Particles2D" parent="NPC2"]
+material = SubResource( 34 )
+position = Vector2( 5, -16.996 )
+emitting = false
+amount = 200
+one_shot = true
+explosiveness = 0.23
+process_material = SubResource( 37 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NPC3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2837, -603 )
+dialogName = "Axi3"
+
+[node name="Light2D" type="Light2D" parent="NPC3"]
+position = Vector2( -34, -14 )
+texture = ExtResource( 4 )
+texture_scale = 0.2
+color = Color( 0.994462, 0.99895, 1, 1 )
+energy = 1.2
+mode = 2
+
+[node name="Sprite" type="Sprite" parent="NPC3"]
+material = SubResource( 47 )
+position = Vector2( -1, -21.9999 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 5 )
+flip_h = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC3"]
+anims/RESET = SubResource( 44 )
+anims/Remove = SubResource( 45 )
+
+[node name="Particles2D" type="Particles2D" parent="NPC3"]
+material = SubResource( 34 )
+position = Vector2( 5, -16.996 )
+emitting = false
+amount = 200
+one_shot = true
+explosiveness = 0.23
+process_material = SubResource( 37 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="LevelTransition" parent="." instance=ExtResource( 7 )]
-position = Vector2( 991, 522 )
+position = Vector2( 3212, -606 )
 levelName = "level2"
+
+[node name="WaterfallArea" type="Node2D" parent="."]
+
+[node name="Light2D2" type="Light2D" parent="WaterfallArea"]
+position = Vector2( -2437, -442 )
+texture = ExtResource( 4 )
+texture_scale = 0.56
+energy = 1.37
+
+[node name="Light2D3" type="Light2D" parent="WaterfallArea"]
+position = Vector2( -2198, -419 )
+texture = ExtResource( 4 )
+texture_scale = 0.56
+energy = 1.05
+mode = 2
+
+[node name="Light2D4" type="Light2D" parent="WaterfallArea"]
+position = Vector2( -2678, -465 )
+texture = ExtResource( 4 )
+texture_scale = 0.56
+energy = 0.6
+mode = 2
+
+[node name="ColorRect3" type="Sprite" parent="WaterfallArea"]
+material = SubResource( 55 )
+position = Vector2( -2333, -417.5 )
+scale = Vector2( 3.15625, 5.54688 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+
+[node name="Particles2D" type="Particles2D" parent="WaterfallArea"]
+position = Vector2( -2334, -251 )
+amount = 128
+process_material = SubResource( 60 )
+texture = ExtResource( 10 )
+
+[node name="ColorRect2" type="ColorRect" parent="WaterfallArea"]
+material = SubResource( 49 )
+margin_left = -2694.0
+margin_top = -717.0
+margin_right = -2118.0
+margin_bottom = -183.0

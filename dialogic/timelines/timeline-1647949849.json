@@ -1,0 +1,131 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey, nice work!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You made it to the waterfall!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You must be good friends if you were able to cooperate so well together!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I hope you had a fun conversation while you climbed your way up here!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And don’t worry, I won’t take much of your time here."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I would simply like to share some words of wisdom before you continue on with your journey."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The path ahead will be much longer than the one you just went through, so be prepared to fall down a few times."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And don’t blame each other for failing either, it’s just a natural part of the learning process."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Feel free to try different paths or solutions, and discuss where you want to go or which paths you want to try next."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Remember it’s not a competition or race either."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Working together is what got you here in the first place!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You should inspire and encourage each other to keep going, and don’t leave your friends behind if you’re ahead."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And of course, always keep talking to them!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Maybe even have another conversation while you’re navigating the path."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Just ask people something about their lives! People usually like talking about themselves."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But I won’t ramble any further, you should know what to do by now."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good luck!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4",
+		"file": "timeline-1647949849.json",
+		"name": "Axi2"
+	}
+}

@@ -1,0 +1,143 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well done! You made it through!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "How did I get here, you ask?"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I have no idea!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Anyway!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I hope you had fun trying to find your way up here."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You should always try to have fun doing something, even if it’s not always the most interesting or enjoyable task."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And I also hope you got to know your friends a bit better as well!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I’m sure you’ll be around them a lot, so you should try to present the most honest side of yourself to them to get to know them well."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "If you do, they will likely do the same and open themselves up to you."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That’s the only way you will truly build trust with the people around you."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Also!"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Before you go…"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I would like to leave you with one last question."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "What are some things that inspire you the most in life?"
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Feel free to take your time, and discuss this for as long as you like."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Maybe 20 minutes, or 20 seconds."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But I invite you to give it some thought."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That’s all I wanted to say."
+		},
+		{
+			"character": "character-1647895646.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Enjoy your journey together!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4",
+		"file": "timeline-1647950206.json",
+		"name": "Axi3"
+	}
+}

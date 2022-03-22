@@ -1,34 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Menus/Multiplayer/UsernameScreen.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/Characters/Player/character_prototype.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/lines/lines0000.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/mantel/mantelJump0000.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/fur/fur0000.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="Shader" id=7]
-code = "// NOTE: Shader automatically converted from Godot Engine 3.4.3.stable's CanvasItemMaterial.
-
-shader_type canvas_item;
-render_mode blend_mix;
-
-uniform vec4 targetColor : hint_color;
-uniform vec4 newColor : hint_color;
-
-void fragment() {
-    vec4 col = texture(TEXTURE, UV);
-    vec4 d4 = abs(col - targetColor);
-	float d = d4.r+d4.g+d4.b+d4.a;
-    if(d < 0.5) {
-        col = newColor;
-    }
-    COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id=8]
-shader = SubResource( 7 )
-shader_param/targetColor = Color( 0.168627, 0.803922, 0.752941, 1 )
-shader_param/newColor = Color( 1, 0, 0, 1 )
 
 [node name="UsernameScreen" type="Node2D"]
 script = ExtResource( 1 )
@@ -63,14 +40,31 @@ custom_styles/completion = SubResource( 1 )
 readonly = true
 
 [node name="ColorPicker" type="ColorPicker" parent="Panel"]
-margin_left = 41.333
-margin_top = 36.0
-margin_right = 357.333
-margin_bottom = 498.0
+margin_left = 45.333
+margin_top = 40.0
+margin_right = 361.333
+margin_bottom = 502.0
 presets_visible = false
 
-[node name="CharacterSprite" type="Sprite" parent="."]
-material = SubResource( 8 )
+[node name="Mantel" type="Sprite" parent="."]
+position = Vector2( 383, 151 )
+scale = Vector2( 0.6, 0.6 )
+z_index = 1
+texture = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Fur" type="Sprite" parent="."]
+position = Vector2( 383, 151 )
+scale = Vector2( 0.6, 0.6 )
+z_index = 1
+texture = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Lines" type="Sprite" parent="."]
 position = Vector2( 383, 151 )
 scale = Vector2( 0.6, 0.6 )
 z_index = 1

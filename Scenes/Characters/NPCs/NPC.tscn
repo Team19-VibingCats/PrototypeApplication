@@ -16,7 +16,7 @@ script = ExtResource( 3 )
 shape = SubResource( 7 )
 
 [node name="PlayerCounter" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -70.194 )
+position = Vector2( 0, -93.273 )
 
 [connection signal="allPlayersPresent" from="PlayerDetectionArea" to="." method="_on_PlayerDetectionArea_allPlayersPresent"]
 [connection signal="playerCountChanged" from="PlayerDetectionArea" to="PlayerCounter" method="playerCountChanged"]
