@@ -1,9 +1,18 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Effects/FireFlies/FireFly.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Effects/FireFlies/FireflySpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Textures/Background/Walkable Area/Context Forest4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/Background/Walkable Area/Context Forest3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/Background/Walkable Area/Context Forest2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/Background/Walkable Area/Context Forest1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/Background/Context ForestB3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/Background/Context ForestB2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/Background/Context ForestEdge.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/Background/Context ForestB1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/Background/Context ForestB4.png" type="Texture" id=13]
 
 [sub_resource type="Environment" id=29]
 background_mode = 4
@@ -281,6 +290,27 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 0/z_index = 0
 
 [node name="CurrentScene" type="Node2D"]
+position = Vector2( 959, -73 )
+
+[node name="Backgorund" type="Node2D" parent="."]
+position = Vector2( 332, 362 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ContextForestB1" type="Sprite" parent="Backgorund"]
+texture = ExtResource( 12 )
+
+[node name="ContextForestB4" type="Sprite" parent="Backgorund"]
+position = Vector2( -5872, 98.0001 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 13 )
+
+[node name="ContextForestB2" type="Sprite" parent="Backgorund"]
+position = Vector2( 10760, 52 )
+texture = ExtResource( 10 )
+
+[node name="ContextForestB3" type="Sprite" parent="Backgorund"]
+position = Vector2( 5260, -838 )
+texture = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -3666, 230 )
@@ -452,3 +482,28 @@ position = Vector2( -3592, 152 )
 position = Vector2( -2320, 170 )
 scale = Vector2( 100, 50 )
 spawnRate = 1.5
+
+[node name="ContextForest2" type="Sprite" parent="."]
+position = Vector2( 3062, 319 )
+scale = Vector2( 0.49, 0.47 )
+texture = ExtResource( 7 )
+
+[node name="ContextForest1" type="Sprite" parent="."]
+position = Vector2( -2586, 336 )
+scale = Vector2( 0.44, 0.44 )
+texture = ExtResource( 8 )
+
+[node name="ContextForest3" type="Sprite" parent="."]
+position = Vector2( 5631, 318 )
+scale = Vector2( 0.47, 0.47 )
+texture = ExtResource( 6 )
+
+[node name="ContextForest4" type="Sprite" parent="."]
+position = Vector2( 330, 300 )
+scale = Vector2( 0.5, 0.49 )
+texture = ExtResource( 5 )
+
+[node name="ContextForestEdge" type="Sprite" parent="."]
+position = Vector2( 6302, 187 )
+scale = Vector2( 0.44, 0.44 )
+texture = ExtResource( 11 )
