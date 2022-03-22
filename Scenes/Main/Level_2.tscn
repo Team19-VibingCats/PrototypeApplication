@@ -452,3 +452,18 @@ position = Vector2( -3592, 152 )
 position = Vector2( -2320, 170 )
 scale = Vector2( 100, 50 )
 spawnRate = 1.5
+
+[node name="FireflySpawner2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 398, 110 )
+scale = Vector2( 100, 50 )
+spawnRate = 1.5
+
+[node name="FireflySpawner3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4627, 42 )
+scale = Vector2( 100, 50 )
+spawnRate = 1.5
+
+[node name="FireflySpawner4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2543, 42 )
+scale = Vector2( 100, 50 )
+spawnRate = 1.5
