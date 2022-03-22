@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Menus/Multiplayer/UsernameScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/lines/lines0000.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/mantel/mantelJump0000.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/fur/fur0000.png" type="Texture" id=4]
+[ext_resource path="res://addons/dialogic/Example Assets/Fonts/DefaultFont.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -13,19 +14,18 @@ script = ExtResource( 1 )
 [node name="LineEdit" type="LineEdit" parent="."]
 margin_left = 47.0
 margin_top = 35.0
-margin_right = 160.0
-margin_bottom = 59.0
+margin_right = 267.0
+margin_bottom = 82.0
+custom_fonts/font = ExtResource( 5 )
 max_length = 20
 placeholder_text = "Username"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Button" type="Button" parent="."]
-margin_left = 49.0
-margin_top = 251.0
-margin_right = 146.0
-margin_bottom = 275.0
+margin_left = 72.0
+margin_top = 168.0
+margin_right = 243.0
+margin_bottom = 211.0
+custom_fonts/font = ExtResource( 5 )
 text = "Confirm"
 
 [node name="Panel" type="TextEdit" parent="."]
@@ -47,7 +47,7 @@ margin_bottom = 502.0
 presets_visible = false
 
 [node name="Mantel" type="Sprite" parent="."]
-position = Vector2( 383, 151 )
+position = Vector2( 420, 108 )
 scale = Vector2( 0.6, 0.6 )
 z_index = 1
 texture = ExtResource( 3 )
@@ -56,7 +56,7 @@ __meta__ = {
 }
 
 [node name="Fur" type="Sprite" parent="."]
-position = Vector2( 383, 151 )
+position = Vector2( 420, 108 )
 scale = Vector2( 0.6, 0.6 )
 z_index = 1
 texture = ExtResource( 4 )
@@ -65,7 +65,7 @@ __meta__ = {
 }
 
 [node name="Lines" type="Sprite" parent="."]
-position = Vector2( 383, 151 )
+position = Vector2( 420, 108 )
 scale = Vector2( 0.6, 0.6 )
 z_index = 1
 texture = ExtResource( 2 )
