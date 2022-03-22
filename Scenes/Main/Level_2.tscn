@@ -1,7 +1,9 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Effects/FireFlies/FireFly.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Effects/FireFlies/FireflySpawner.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Environment" id=29]
 background_mode = 4
@@ -442,3 +444,11 @@ rotation = -0.357867
 position = Vector2( -54, 2 )
 rotation = 0.140541
 polygon = PoolVector2Array( 32, -8, 73, -20, 78, -11, 31, 4 )
+
+[node name="FireFly" parent="." instance=ExtResource( 3 )]
+position = Vector2( -3592, 152 )
+
+[node name="FireflySpawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( -2320, 170 )
+scale = Vector2( 100, 50 )
+spawnRate = 1.5
