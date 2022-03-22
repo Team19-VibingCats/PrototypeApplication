@@ -22,7 +22,8 @@ func _ready():
 	$Body/Sprites/Mantel.modulate = TokenHandler.color
 	
 	if !hasLight:
-		$Body/Light2D.visible = false
+		$Body/Light2D.set_process(false)
+		$Body/Light2D.texture_scale = 0.2
 	if !hasRope:
 		$Body/RopeThrower.queue_free()
 
