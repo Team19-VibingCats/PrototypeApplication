@@ -7,12 +7,15 @@ var fake = false
 func _ready():
 	name = TokenHandler.username
 	
-	FunctionCallHandler.requestFunctionCall(FakeObjectHandler,"instanceObject",{"instance": "player","name": name},true)
-#	FunctionCallHandler.requestFunctionCall($Body,"setSpriteColor",TokenHandler.color,true)
-	PropertiesHandler.requestPropertySync($Body/Label,"self_modulate",TokenHandler.color,false,true)
-	PropertiesHandler.requestPropertySync($Body/Label,"text",TokenHandler.username,false,true)
+	if !GlobalVariables.initialPlayerSync:
+		GlobalVariables.initialPlayerSync = true
+		FunctionCallHandler.requestFunctionCall(FakeObjectHandler,"instanceObject",{"instance": "player","name": name},true)
+	#	FunctionCallHandler.requestFunctionCall($Body,"setSpriteColor",TokenHandler.color,true)
+		PropertiesHandler.requestPropertySync($Body/Label,"self_modulate",TokenHandler.color,false,true)
+		PropertiesHandler.requestPropertySync($Body/Label,"text",TokenHandler.username,false,true)
+		
+		PropertiesHandler.requestPropertySync($Body/Sprites/Mantel,"modulate",TokenHandler.color,false,true)
 	
-	PropertiesHandler.requestPropertySync($Body/Sprites/Mantel,"modulate",TokenHandler.color,false,true)
 	$Body/Sprites/Mantel.modulate = TokenHandler.color
 
 func _physics_process(delta):
@@ -20,9 +23,12 @@ func _physics_process(delta):
 	moveCamera(delta)
 
 func handleInputs():
-	if fake: return
-	
 	var moveDirection = Vector2(0,0)
+	
+	if GlobalConstants.controlsDisabled:
+		body.setMoveDirection(moveDirection)
+		return
+	
 	if Input.is_action_pressed("Left"):
 		moveDirection.x -= 1
 	if Input.is_action_pressed("Right"):

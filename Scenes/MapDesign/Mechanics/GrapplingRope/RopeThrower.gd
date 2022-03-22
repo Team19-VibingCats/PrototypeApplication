@@ -76,7 +76,7 @@ func rigidPlayer():
 #	player. = 0
 
 func _input(event):
-	if event.is_action_pressed("LeftClick"):
+	if event.is_action_pressed("LeftClick") && !GlobalConstants.controlsDisabled:
 		throw()
 	if event.is_action_released("LeftClick"):
 		deleteRope()

@@ -1,33 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Textures/Characters/Player/character_prototype.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Menus/UIElements/PlayerCounter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MapDesign/Detectors/PlayerDetectionArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/NPCs/NPC.gd" type="Script" id=3]
-
-[sub_resource type="Shader" id=5]
-code = "// NOTE: Shader automatically converted from Godot Engine 3.4.3.stable's CanvasItemMaterial.
-
-shader_type canvas_item;
-render_mode blend_mix;
-
-uniform vec4 targetColor : hint_color;
-uniform vec4 newColor : hint_color;
-
-void fragment() {
-    vec4 col = texture(TEXTURE, UV);
-    vec4 d4 = abs(col - targetColor);
-    float d = max(max(d4.r, d4.g), d4.b);
-    if(d < 0.23) {
-        col = newColor;
-    }
-    COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 5 )
-shader_param/targetColor = Color( 0.168627, 0.803922, 0.752941, 1 )
-shader_param/newColor = Color( 0.529412, 0.439216, 0.537255, 1 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 66, 30 )
@@ -35,25 +10,13 @@ extents = Vector2( 66, 30 )
 [node name="NPC" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="CharacterSprite" type="Sprite" parent="."]
-material = SubResource( 6 )
-position = Vector2( 0, 5 )
-scale = Vector2( 0.15, 0.15 )
-z_index = 1
-texture = ExtResource( 1 )
-flip_h = true
-
 [node name="PlayerDetectionArea" parent="." instance=ExtResource( 2 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea"]
 shape = SubResource( 7 )
 
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_left = -69.0
-margin_top = -52.0
-margin_right = 90.0
-margin_bottom = -38.0
-text = "OMG ZO COOL IK PRAAT"
+[node name="PlayerCounter" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -70.194 )
 
 [connection signal="allPlayersPresent" from="PlayerDetectionArea" to="." method="_on_PlayerDetectionArea_allPlayersPresent"]
+[connection signal="playerCountChanged" from="PlayerDetectionArea" to="PlayerCounter" method="playerCountChanged"]

@@ -13,9 +13,11 @@ func _ready():
 
 func _enter_tree():
 	GlobalVariables.playerCount += 1
+	GlobalVariables.fakePlayers.append(get_parent())
 
 func _exit_tree():
 	GlobalVariables.playerCount -= 1
+	GlobalVariables.fakePlayers.erase(get_parent())
 
 
 #Sprite handling------------------------------------------------------------------------------------
