@@ -292,6 +292,13 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 [node name="CurrentScene" type="Node2D"]
 position = Vector2( 959, -73 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -4634.0
+margin_top = -1511.0
+margin_right = 8331.0
+margin_bottom = 1847.0
+color = Color( 0.192157, 0.211765, 0.0196078, 1 )
+
 [node name="Backgorund" type="Node2D" parent="."]
 position = Vector2( 332, 362 )
 scale = Vector2( 0.5, 0.5 )
@@ -475,13 +482,25 @@ position = Vector2( -54, 2 )
 rotation = 0.140541
 polygon = PoolVector2Array( 32, -8, 73, -20, 78, -11, 31, 4 )
 
-[node name="FireFly" parent="." instance=ExtResource( 3 )]
-position = Vector2( -3592, 152 )
-
 [node name="FireflySpawner" parent="." instance=ExtResource( 4 )]
-position = Vector2( -2320, 170 )
+position = Vector2( -2383, 170 )
 scale = Vector2( 100, 50 )
-spawnRate = 1.5
+spawnRate = 2.0
+
+[node name="FireflySpawner2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 641, 96 )
+scale = Vector2( 100, 50 )
+spawnRate = 2.0
+
+[node name="FireflySpawner3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2850, 34 )
+scale = Vector2( 100, 50 )
+spawnRate = 2.0
+
+[node name="FireflySpawner4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4965, -13 )
+scale = Vector2( 100, 50 )
+spawnRate = 2.0
 
 [node name="ContextForest2" type="Sprite" parent="."]
 position = Vector2( 3062, 319 )
@@ -507,3 +526,6 @@ texture = ExtResource( 5 )
 position = Vector2( 6302, 187 )
 scale = Vector2( 0.44, 0.44 )
 texture = ExtResource( 11 )
+
+[node name="FireFly" parent="." instance=ExtResource( 3 )]
+position = Vector2( -3591, 179 )

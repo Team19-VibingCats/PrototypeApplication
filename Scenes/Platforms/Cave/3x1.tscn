@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Textures/Background/Platforms/Context Platforms3.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/Background/Platforms/Context Platforms2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Platforms/PlatformController.gd" type="Script" id=4]
+
+[node name="3x1 Platform" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="ContextPlatforms8" type="Sprite" parent="."]
+position = Vector2( 1, 11 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="ContextPlatforms9" type="Sprite" parent="."]
+position = Vector2( -4.76837e-07, 7 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
