@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/254735__jergonda__hang-man-s-rope (1).wav-239f430fc12b3c87439e2fefa0ce8a15.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/254735__jergonda__hang-man-s-rope (1).wav"
+dest_files=[ "res://.import/254735__jergonda__hang-man-s-rope (1).wav-239f430fc12b3c87439e2fefa0ce8a15.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

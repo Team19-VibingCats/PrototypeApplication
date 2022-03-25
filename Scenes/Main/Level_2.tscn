@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Assets/Textures/Background/Context ForestEdge.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Textures/Background/Context ForestB1.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Textures/Background/Context ForestB4.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Main/Level_2.gd" type="Script" id=14]
+[ext_resource path="res://Assets/Audio/160893__ecfike__quiet-spring-woodland-ambience.wav" type="AudioStream" id=15]
 
 [sub_resource type="Environment" id=29]
 background_mode = 4
@@ -291,6 +293,7 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [node name="CurrentScene" type="Node2D"]
 position = Vector2( 959, -73 )
+script = ExtResource( 14 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -4634.0
@@ -529,3 +532,7 @@ texture = ExtResource( 11 )
 
 [node name="FireFly" parent="." instance=ExtResource( 3 )]
 position = Vector2( -3591, 179 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+autoplay = true

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/MapDesign/Mechanics/GrapplingRope/RopeThrower.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Other/Rope.png" type="Texture" id=2]
+[ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player_2D.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Audio/1949__nicstage__rbhropermx1.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/345419__artmasterrich__landing-01 (mp3cut.net).wav" type="AudioStream" id=5]
 
 [node name="RopeThrower" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,3 +20,19 @@ texture = ExtResource( 2 )
 texture_mode = 1
 
 [node name="Target" type="Node2D" parent="."]
+
+[node name="Throw" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+pitch_scale = 2.0
+script = ExtResource( 3 )
+samples = [ ExtResource( 4 ) ]
+random_pitch_range = 1.0
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+pitch_scale = 10.0
+script = ExtResource( 3 )
+samples = [ ExtResource( 5 ) ]
+random_pitch_range = 1.0

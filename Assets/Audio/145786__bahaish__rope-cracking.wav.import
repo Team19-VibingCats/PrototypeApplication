@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/145786__bahaish__rope-cracking.wav-290115d6e05063d7d7bdc3b814ab72cb.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/145786__bahaish__rope-cracking.wav"
+dest_files=[ "res://.import/145786__bahaish__rope-cracking.wav-290115d6e05063d7d7bdc3b814ab72cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

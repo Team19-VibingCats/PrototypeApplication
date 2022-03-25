@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/328173_yaen_sndwaterfall-loop2 (online-audio-converter.com).wav-7435b71374bc17d451e3b133ba679ee4.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/328173_yaen_sndwaterfall-loop2 (online-audio-converter.com).wav"
+dest_files=[ "res://.import/328173_yaen_sndwaterfall-loop2 (online-audio-converter.com).wav-7435b71374bc17d451e3b133ba679ee4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

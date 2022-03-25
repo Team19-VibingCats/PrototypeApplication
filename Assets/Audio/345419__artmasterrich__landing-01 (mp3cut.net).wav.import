@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/345419__artmasterrich__landing-01 (mp3cut.net).wav-512025690e3147b66675be3abdb4f1f5.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/345419__artmasterrich__landing-01 (mp3cut.net).wav"
+dest_files=[ "res://.import/345419__artmasterrich__landing-01 (mp3cut.net).wav-512025690e3147b66675be3abdb4f1f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

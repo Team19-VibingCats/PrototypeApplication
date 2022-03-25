@@ -17,6 +17,7 @@ func _ready():
 func throw():
 	if !throwing:
 		throwing = true
+		$Throw.play()
 		
 		if $RayCast2D.is_colliding():
 			succesfullThrow = true
@@ -49,6 +50,7 @@ func _physics_process(delta):
 
 func instanceRope():
 	deleteRope()
+	$Hit.play()
 	
 	var player = get_parent()
 	currentRope = ropeScene.instance()

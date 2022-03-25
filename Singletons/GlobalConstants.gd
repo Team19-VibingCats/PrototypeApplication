@@ -5,8 +5,8 @@ var serverAddress = "http://134.122.50.55:8080/MultiplayerServer-prototype-1"
 
 var controlsDisabled = false
 
-var level1 = preload("res://Scenes/Main/Level_1.tscn")
-var level2 = preload("res://Scenes/Main/Level_2.tscn")
+var level1 = load("res://Scenes/Main/Level_1.tscn")
+var level2 = load("res://Scenes/Main/Level_2.tscn")
 
 func switchLevel(level):
 	var newLevel = get(level).instance()
