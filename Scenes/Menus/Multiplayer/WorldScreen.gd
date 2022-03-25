@@ -15,3 +15,7 @@ func _on_Host_pressed():
 func _process(delta):
 	if TokenHandler.loggedIn:
 		get_tree().change_scene("res://Scenes/Menus/Multiplayer/Lobby.tscn")
+
+
+func _on_Back_pressed():
+	get_tree().change_scene("res://Scenes/Menus/Multiplayer/UsernameScreen.tscn")

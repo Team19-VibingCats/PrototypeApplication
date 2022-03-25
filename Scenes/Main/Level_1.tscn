@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://Scenes/Platforms/Cave/4x1.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/MapDesign/Mechanics/UnstablePlatform/UnstablePlatform.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Effects/FireFlies/FireflySpawner.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Textures/Background/Platforms/Context Platforms1.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/MapDesign/Detectors/PlayerDetectionArea.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Menus/UIElements/PlayerCounter.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/MapDesign/Mechanics/Door/Door.gd" type="Script" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -561,6 +565,56 @@ tracks/2/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="RectangleShape2D" id=61]
+extents = Vector2( 190, 55.0005 )
+
+[sub_resource type="RectangleShape2D" id=62]
+extents = Vector2( 50, 50 )
+
+[sub_resource type="Animation" id=63]
+resource_name = "OpenDoor"
+tracks/0/type = "value"
+tracks/0/path = NodePath("DoorAnchor/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -21, -27 ), Vector2( -21, -110.037 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_process"
+} ]
+}
+
+[sub_resource type="Animation" id=64]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DoorAnchor/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -21, -27 ) ]
+}
+
 [sub_resource type="Shader" id=50]
 code = "/*
 Shader from Godot Shaders - the free shader library.
@@ -662,7 +716,7 @@ noise_offset = Vector2( 16.396, 12.458 )
 [sub_resource type="ShaderMaterial" id=55]
 shader = SubResource( 50 )
 shader_param/scale = Vector2( 1.169, 3.569 )
-shader_param/zoom = 0.39685
+shader_param/zoom = 1.49831
 shader_param/gap_stretch = Vector2( 0.8, 0.05 )
 shader_param/refraction_stretch = Vector2( 2, 0.8 )
 shader_param/refraction_strength = 0.015
@@ -838,10 +892,11 @@ margin_bottom = 1200.0
 color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1241, 486 )
+position = Vector2( -2343, 189 )
 hasLight = true
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -961,6 +1016,40 @@ __meta__ = {
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color( 0, 0, 0, 1 )
+
+[node name="Door" type="Node2D" parent="."]
+position = Vector2( -2626, 212 )
+script = ExtResource( 25 )
+vibrate = true
+
+[node name="DoorAnchor" type="Node2D" parent="Door"]
+
+[node name="Sprite" type="Sprite" parent="Door/DoorAnchor"]
+position = Vector2( -21, -27 )
+rotation = 1.57079
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door/DoorAnchor/Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/DoorAnchor/Sprite/StaticBody2D"]
+position = Vector2( 70, -14.9971 )
+shape = SubResource( 61 )
+
+[node name="PlayerDetectionArea" parent="Door" instance=ExtResource( 23 )]
+position = Vector2( 50, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/PlayerDetectionArea"]
+position = Vector2( -13, -5 )
+shape = SubResource( 62 )
+
+[node name="PlayerCounter" parent="Door" instance=ExtResource( 24 )]
+position = Vector2( 47, -40 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door"]
+playback_speed = 0.5
+anims/OpenDoor = SubResource( 63 )
+anims/RESET = SubResource( 64 )
 
 [node name="LevelTransition" parent="." instance=ExtResource( 7 )]
 position = Vector2( 3212, -606 )
@@ -1342,3 +1431,6 @@ position = Vector2( 1936, -780 )
 position = Vector2( 3159, -701 )
 scale = Vector2( 22.974, 11.358 )
 spawnRate = 0.5
+
+[connection signal="allPlayersPresent" from="Door/PlayerDetectionArea" to="Door" method="openDoor"]
+[connection signal="playerCountChanged" from="Door/PlayerDetectionArea" to="Door/PlayerCounter" method="playerCountChanged"]

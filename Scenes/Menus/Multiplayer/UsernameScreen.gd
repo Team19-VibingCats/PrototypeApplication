@@ -1,5 +1,9 @@
 extends Node2D
 
+func _ready():
+	$LineEdit.text = TokenHandler.username
+	$Panel/ColorPicker.color = TokenHandler.color
+
 func _on_Button_pressed():
 	if $LineEdit.text.length() > 1:
 		TokenHandler.username = $LineEdit.text

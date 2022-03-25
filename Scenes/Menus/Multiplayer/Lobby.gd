@@ -42,3 +42,8 @@ func _on_StartButton_pressed():
 	["Content-Type: application/json"],
 	false, 
 	HTTPClient.METHOD_POST)
+
+
+func _on_Back_pressed():
+	TokenHandler.loggedIn = false
+	get_tree().change_scene("res://Scenes/Menus/Multiplayer/WorldScreen.tscn")

@@ -29,6 +29,14 @@ margin_bottom = 537.0
 custom_fonts/font = ExtResource( 2 )
 text = "Start"
 
+[node name="Back" type="Button" parent="."]
+margin_left = 881.0
+margin_top = 29.0
+margin_right = 978.0
+margin_bottom = 53.0
+text = "Back"
+
 [connection signal="request_completed" from="RetrieveLobby" to="." method="_on_RetrieveLobby_request_completed"]
 [connection signal="request_completed" from="EnterWorld" to="." method="_on_EnterWorld_request_completed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
