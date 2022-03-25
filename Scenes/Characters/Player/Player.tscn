@@ -310,7 +310,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 10 )
 animation = "Fall"
-frame = 12
+frame = 9
 playing = true
 
 [node name="PropertySynchronizer" parent="Body/Sprites/Fur" instance=ExtResource( 4 )]
@@ -323,7 +323,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 11 )
 animation = "Fall"
-frame = 14
+frame = 11
 playing = true
 
 [node name="PropertySynchronizer" parent="Body/Sprites/Mantel" instance=ExtResource( 4 )]
@@ -336,7 +336,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 8 )
 animation = "Fall"
-frame = 12
+frame = 9
 playing = true
 
 [node name="PropertySynchronizer" parent="Body/Sprites/Lines" instance=ExtResource( 4 )]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=2]
+[gd_scene load_steps=140 format=2]
 
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Walk/lines/walk0001.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Characters/Player/FakePlayer.gd" type="Script" id=2]
@@ -126,6 +126,10 @@
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/mantel/mantelJump0008.png" type="Texture" id=124]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/mantel/mantelJump0003.png" type="Texture" id=125]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/mantel/mantelJump0004.png" type="Texture" id=126]
+[ext_resource path="res://Assets/Audio/245933_sophiehall3535_light-woosh_2 (online-audio-converter.com).wav" type="AudioStream" id=127]
+[ext_resource path="res://Assets/Audio/345419__artmasterrich__landing-01 (mp3cut.net).wav" type="AudioStream" id=128]
+[ext_resource path="res://Assets/Audio/127197__dave-des__fast-simple-chop-5.wav" type="AudioStream" id=129]
+[ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player_2D.gd" type="Script" id=130]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 28 )
@@ -142,15 +146,15 @@ animations = [ {
 "name": "Fall",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 58 ), ExtResource( 68 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 73 ), ExtResource( 56 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 60 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 50 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 23 ), ExtResource( 42 ), ExtResource( 26 ), ExtResource( 43 ), ExtResource( 48 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 28 ) ],
 "loop": false,
 "name": "Jump",
 "speed": 35.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 58 ), ExtResource( 68 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 73 ), ExtResource( 56 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -165,15 +169,15 @@ animations = [ {
 "name": "Fall",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 88 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 96 ), ExtResource( 91 ), ExtResource( 105 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 116 ), ExtResource( 92 ), ExtResource( 111 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 101 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 109 ), ExtResource( 102 ), ExtResource( 118 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 122 ), ExtResource( 124 ), ExtResource( 123 ), ExtResource( 121 ) ],
 "loop": false,
 "name": "Jump",
 "speed": 35.0
+}, {
+"frames": [ ExtResource( 88 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 96 ), ExtResource( 91 ), ExtResource( 105 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 116 ), ExtResource( 92 ), ExtResource( 111 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 101 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -188,15 +192,15 @@ animations = [ {
 "name": "Fall",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 52 ), ExtResource( 62 ), ExtResource( 10 ), ExtResource( 63 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 81 ), ExtResource( 12 ), ExtResource( 83 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 36 ), ExtResource( 49 ), ExtResource( 22 ), ExtResource( 47 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 44 ), ExtResource( 25 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 32 ) ],
 "loop": false,
 "name": "Jump",
 "speed": 35.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 52 ), ExtResource( 62 ), ExtResource( 10 ), ExtResource( 63 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 81 ), ExtResource( 12 ), ExtResource( 83 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 25.0
 } ]
 
 [sub_resource type="Gradient" id=17]
@@ -283,7 +287,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 2 )
 animation = "Fall"
-frame = 12
+frame = 4
 playing = true
 
 [node name="Mantel" type="AnimatedSprite" parent="Body/Sprites"]
@@ -291,7 +295,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 3 )
 animation = "Fall"
-frame = 14
+frame = 6
 playing = true
 
 [node name="Lines" type="AnimatedSprite" parent="Body/Sprites"]
@@ -299,7 +303,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 4 )
 animation = "Fall"
-frame = 12
+frame = 4
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="Body"]
@@ -323,6 +327,32 @@ explosiveness = 0.5
 local_coords = false
 process_material = SubResource( 18 )
 texture = ExtResource( 84 )
+
+[node name="Land" type="AudioStreamPlayer2D" parent="Body"]
+stream = ExtResource( 128 )
+volume_db = -20.0
+pitch_scale = 3.0
+max_distance = 500.0
+script = ExtResource( 130 )
+samples = [ ExtResource( 128 ) ]
+random_pitch_range = 2.0
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Body"]
+stream = ExtResource( 128 )
+volume_db = -15.0
+pitch_scale = 3.0
+max_distance = 500.0
+script = ExtResource( 130 )
+samples = [ ExtResource( 129 ) ]
+random_pitch_range = 2.0
+
+[node name="Spin" type="AudioStreamPlayer2D" parent="Body"]
+stream = ExtResource( 128 )
+pitch_scale = 6.0
+max_distance = 500.0
+script = ExtResource( 130 )
+samples = [ ExtResource( 127 ) ]
+random_pitch_range = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.5

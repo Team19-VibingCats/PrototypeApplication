@@ -36,6 +36,10 @@ propertyPath = "points"
 nodePath = NodePath("..")
 propertyPath = "global_position"
 
+[node name="PropertySynchronizer3" parent="." instance=ExtResource( 3 )]
+nodePath = NodePath("../AudioStreamPlayer2D")
+propertyPath = "volume_db"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0

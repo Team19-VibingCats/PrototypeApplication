@@ -42,6 +42,7 @@ func spin():
 		justSpinned = true
 		animationPlayer.play("Spin")
 		$Spin.play()
+		FunctionCallHandler.requestFunctionCall($Spin,"play")
 		FunctionCallHandler.requestFunctionCall(animationPlayer,"play","Spin")
 		
 		if !touchingGround:
@@ -69,6 +70,7 @@ func moveBody(delta):
 			currentJumpLength = 0.0
 			groundJitterFix = 0
 			$Jump.play()
+			FunctionCallHandler.requestFunctionCall($Jump,"play")
 			playAnimation({"Animation": "Jump", "Reset": true, "Block": true})
 			
 			if get_parent().get_node("AnimationPlayer").is_playing():
@@ -94,6 +96,7 @@ func groundDetection():
 		groundJitterFix = 1.0
 		if !touchingGround:
 			$Land.play()
+			FunctionCallHandler.requestFunctionCall($Land,"play")
 			emit_signal("hitGround")
 	else:
 		groundJitterFix -= 0.2
