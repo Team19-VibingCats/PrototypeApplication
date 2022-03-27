@@ -302,3 +302,5 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 custom_fonts/font = ExtResource( 5 )
 text = "Confirm"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
