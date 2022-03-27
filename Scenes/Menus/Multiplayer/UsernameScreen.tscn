@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Menus/Multiplayer/UsernameScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/lines/lines0000.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Textures/Background/Context ForestFR4.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Textures/Background/Context ForestBush1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Textures/Background/Context ForestBush2.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Effects/FireFlies/FireflySpawner.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -126,26 +127,31 @@ position = Vector2( 534, 469 )
 scale = Vector2( 0.262901, 0.262901 )
 texture = ExtResource( 9 )
 
+[node name="FireflySpawner" parent="." instance=ExtResource( 11 )]
+position = Vector2( 515, 260 )
+scale = Vector2( 54.6044, 46.7713 )
+spawnRate = 2.0
+
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 47.0
-margin_top = 35.0
-margin_right = 267.0
-margin_bottom = 82.0
+margin_left = 396.0
+margin_top = 450.0
+margin_right = 616.0
+margin_bottom = 497.0
 custom_fonts/font = ExtResource( 5 )
 max_length = 20
 placeholder_text = "Username"
 
 [node name="Button" type="Button" parent="."]
-margin_left = 72.0
-margin_top = 168.0
-margin_right = 243.0
-margin_bottom = 211.0
+margin_left = 420.0
+margin_top = 510.0
+margin_right = 590.0
+margin_bottom = 553.0
 custom_fonts/font = ExtResource( 5 )
 text = "Confirm"
 
 [node name="Mantel" type="Sprite" parent="."]
-position = Vector2( 420, 108 )
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( 580, 159 )
+scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 3 )
 __meta__ = {
@@ -153,8 +159,8 @@ __meta__ = {
 }
 
 [node name="Fur" type="Sprite" parent="."]
-position = Vector2( 420, 108 )
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( 580, 159 )
+scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 4 )
 __meta__ = {
@@ -162,8 +168,8 @@ __meta__ = {
 }
 
 [node name="Lines" type="Sprite" parent="."]
-position = Vector2( 420, 108 )
-scale = Vector2( 0.6, 0.6 )
+position = Vector2( 580, 159 )
+scale = Vector2( 0.8, 0.8 )
 z_index = 1
 texture = ExtResource( 2 )
 __meta__ = {
@@ -176,13 +182,14 @@ anims/RESET = SubResource( 3 )
 anims/ResetColorpicker = SubResource( 2 )
 
 [node name="ColorPickerAnchor" type="Node2D" parent="."]
-position = Vector2( 608, 188 )
+position = Vector2( 674, 537 )
 
 [node name="Panel" type="TextEdit" parent="ColorPickerAnchor"]
-margin_left = -17.0
-margin_top = -152.0
-margin_right = 25.0
-margin_bottom = 157.0
+margin_left = -13.0
+margin_top = -151.0
+margin_right = 29.0
+margin_bottom = 154.0
+rect_rotation = 90.0
 custom_styles/read_only = SubResource( 1 )
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
@@ -190,10 +197,10 @@ custom_styles/completion = SubResource( 1 )
 readonly = true
 
 [node name="ColorPicker" type="ColorPicker" parent="ColorPickerAnchor/Panel"]
-margin_left = -311.0
-margin_top = 3.0
-margin_right = 33.0
-margin_bottom = 487.0
+margin_left = -310.0
+margin_top = -1.0
+margin_right = 34.0
+margin_bottom = 483.0
 color = Color( 0.827451, 0.176471, 0.176471, 1 )
 presets_enabled = false
 presets_visible = false
