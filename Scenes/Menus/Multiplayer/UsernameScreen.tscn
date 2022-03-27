@@ -215,6 +215,10 @@ margin_right = 310.0
 margin_bottom = 697.0
 rect_min_size = Vector2( 0, 500 )
 
+[node name="FireflySpawner" parent="CenterContainer/VBoxContainer/Control" instance=ExtResource( 11 )]
+position = Vector2( 150, 377 )
+scale = Vector2( 107.683, 63.036 )
+
 [node name="Mantel" type="TextureRect" parent="CenterContainer/VBoxContainer/Control"]
 margin_top = -150.0
 margin_right = 480.0
@@ -241,11 +245,6 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="FireflySpawner" parent="CenterContainer/VBoxContainer/Control" instance=ExtResource( 11 )]
-position = Vector2( 150, 377 )
-scale = Vector2( 54.6044, 46.7713 )
-spawnRate = 2.0
 
 [node name="Panel" type="TextEdit" parent="CenterContainer/VBoxContainer"]
 margin_left = -13.0
