@@ -8,8 +8,8 @@
 	"name": "Axi",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 0,
-	"offset_y": 100,
+	"offset_x": -50,
+	"offset_y": 50,
 	"portraits": [
 		{
 			"name": "Default",

@@ -737,7 +737,7 @@ noise_offset = Vector2( 16.396, 12.458 )
 [sub_resource type="ShaderMaterial" id=55]
 shader = SubResource( 50 )
 shader_param/scale = Vector2( 1.169, 3.569 )
-shader_param/zoom = 1.88775
+shader_param/zoom = 0.445449
 shader_param/gap_stretch = Vector2( 0.8, 0.05 )
 shader_param/refraction_stretch = Vector2( 2, 0.8 )
 shader_param/refraction_strength = 0.015
@@ -918,22 +918,18 @@ position = Vector2( 638, 129 )
 scale = Vector2( 0.469356, 0.510431 )
 
 [node name="ContextCaveBack" type="Sprite" parent="1Row Background"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 29 )
 
 [node name="ContextCaveBack2" type="Sprite" parent="1Row Background"]
 position = Vector2( -5541.64, 111.67 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 29 )
 
 [node name="ContextCaveBack3" type="Sprite" parent="1Row Background"]
 position = Vector2( -5748.3, -2198.14 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 29 )
 
 [node name="ContextCaveBack4" type="Sprite" parent="1Row Background"]
 position = Vector2( -196.013, -2317.65 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 29 )
 
 [node name="ContextCaveBack5" type="Sprite" parent="1Row Background"]
@@ -971,6 +967,7 @@ position = Vector2( 1169, 498 )
 hasLight = true
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -1088,7 +1085,6 @@ __meta__ = {
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Door" type="Node2D" parent="."]
