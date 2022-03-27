@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
@@ -28,6 +28,10 @@
 [ext_resource path="res://Assets/Audio/474178__dwoboyle__door-stone-large-001.wav" type="AudioStream" id=26]
 [ext_resource path="res://Assets/Audio/328173_yaen_sndwaterfall-loop2 (online-audio-converter.com).wav" type="AudioStream" id=27]
 [ext_resource path="res://Scenes/Main/Level_1.gd" type="Script" id=28]
+[ext_resource path="res://Assets/Textures/Background/Context CaveBack.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Textures/Background/Context CaveBack2.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Textures/Background/Context CaveBack3.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Textures/Background/Context CaveBack1.png" type="Texture" id=32]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -733,7 +737,7 @@ noise_offset = Vector2( 16.396, 12.458 )
 [sub_resource type="ShaderMaterial" id=55]
 shader = SubResource( 50 )
 shader_param/scale = Vector2( 1.169, 3.569 )
-shader_param/zoom = 0.629961
+shader_param/zoom = 0.374577
 shader_param/gap_stretch = Vector2( 0.8, 0.05 )
 shader_param/refraction_stretch = Vector2( 2, 0.8 )
 shader_param/refraction_strength = 0.015
@@ -907,14 +911,66 @@ margin_left = -3448.0
 margin_top = -1728.0
 margin_right = 3592.0
 margin_bottom = 1200.0
-color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="1Row Background" type="Node2D" parent="."]
+position = Vector2( 638, 129 )
+scale = Vector2( 0.469356, 0.510431 )
+
+[node name="ContextCaveBack" type="Sprite" parent="1Row Background"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 29 )
+
+[node name="ContextCaveBack2" type="Sprite" parent="1Row Background"]
+position = Vector2( -5541.64, 111.67 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 29 )
+
+[node name="ContextCaveBack3" type="Sprite" parent="1Row Background"]
+position = Vector2( -5748.3, -2198.14 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 29 )
+
+[node name="ContextCaveBack4" type="Sprite" parent="1Row Background"]
+position = Vector2( -196.013, -2317.65 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 29 )
+
+[node name="ContextCaveBack5" type="Sprite" parent="1Row Background"]
+position = Vector2( 5343.49, -2012.15 )
+scale = Vector2( 1, 1.01575 )
+texture = ExtResource( 29 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = -3423.0
+margin_top = -1729.0
+margin_right = 3617.0
+margin_bottom = 1199.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="2Row Background" type="Node2D" parent="."]
+
+[node name="ContextCaveBack3" type="Sprite" parent="2Row Background"]
+position = Vector2( 1802, 164 )
+scale = Vector2( 0.465, 0.465 )
+texture = ExtResource( 31 )
+
+[node name="ContextCaveBack2" type="Sprite" parent="2Row Background"]
+position = Vector2( -1458, 213 )
+scale = Vector2( 0.465, 0.465 )
+texture = ExtResource( 30 )
+
+[node name="ContextCaveBack1" type="Sprite" parent="2Row Background"]
+position = Vector2( 1801, -1146 )
+scale = Vector2( 0.465, 0.465 )
+texture = ExtResource( 32 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1169, 498 )
 hasLight = true
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -1032,6 +1088,7 @@ __meta__ = {
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Door" type="Node2D" parent="."]
@@ -1079,24 +1136,47 @@ levelName = "level2"
 
 [node name="WaterfallArea" type="Node2D" parent="."]
 
-[node name="Light2D2" type="Light2D" parent="WaterfallArea"]
-position = Vector2( -2425, -417 )
-texture = ExtResource( 4 )
-texture_scale = 0.55
-energy = 1.37
-
 [node name="Light2D3" type="Light2D" parent="WaterfallArea"]
-position = Vector2( -2245, -428 )
+position = Vector2( -2339, -409 )
 texture = ExtResource( 4 )
 texture_scale = 0.56
-energy = 0.9
 mode = 2
 
 [node name="Light2D4" type="Light2D" parent="WaterfallArea"]
-position = Vector2( -2593, -449 )
+position = Vector2( -2550, -471 )
 texture = ExtResource( 4 )
 texture_scale = 0.56
-energy = 0.6
+energy = 0.8
+mode = 2
+
+[node name="Light2D5" type="Light2D" parent="WaterfallArea"]
+position = Vector2( 849, -1390 )
+rotation = 0.241867
+texture = ExtResource( 4 )
+texture_scale = 0.56
+mode = 2
+
+[node name="Light2D6" type="Light2D" parent="WaterfallArea"]
+position = Vector2( 810, -1554 )
+rotation = 0.241867
+texture = ExtResource( 4 )
+texture_scale = 0.56
+energy = 0.8
+mode = 2
+
+[node name="Light2D7" type="Light2D" parent="WaterfallArea"]
+position = Vector2( 2926, -667 )
+rotation = 0.241867
+texture = ExtResource( 4 )
+texture_scale = 0.56
+mode = 2
+
+[node name="Light2D8" type="Light2D" parent="WaterfallArea"]
+position = Vector2( 2864, -817 )
+rotation = 0.241867
+texture = ExtResource( 4 )
+texture_scale = 0.56
+energy = 0.8
 mode = 2
 
 [node name="ColorRect3" type="Sprite" parent="WaterfallArea"]
@@ -1108,27 +1188,27 @@ script = ExtResource( 9 )
 
 [node name="ColorRect2" type="ColorRect" parent="WaterfallArea"]
 material = SubResource( 49 )
-margin_left = -2684.0
-margin_top = -781.0
-margin_right = -2108.0
-margin_bottom = -247.0
+margin_left = -2676.0
+margin_top = -732.0
+margin_right = -2100.0
+margin_bottom = -198.0
 rect_rotation = 4.44338
 
 [node name="ColorRect4" type="ColorRect" parent="WaterfallArea"]
 material = SubResource( 49 )
-margin_left = 662.0
-margin_top = -1760.0
-margin_right = 1238.0
-margin_bottom = -1226.0
-rect_rotation = 11.433
+margin_left = 684.0
+margin_top = -1792.0
+margin_right = 1260.0
+margin_bottom = -1195.0
+rect_rotation = 15.2684
 rect_scale = Vector2( 0.836265, 0.94315 )
 
 [node name="ColorRect5" type="ColorRect" parent="WaterfallArea"]
 material = SubResource( 49 )
-margin_left = 2747.0
-margin_top = -1048.0
-margin_right = 3323.0
-margin_bottom = -514.0
+margin_left = 2730.0
+margin_top = -1045.0
+margin_right = 3306.0
+margin_bottom = -511.0
 rect_rotation = 10.9902
 rect_scale = Vector2( 0.911913, 1.02847 )
 
@@ -1139,37 +1219,35 @@ autoplay = true
 max_distance = 829.0
 attenuation = 2.54912
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Walkeble Area" type="Node2D" parent="."]
 
-[node name="ContextCave4" type="Sprite" parent="Background"]
-position = Vector2( 1792, 208 )
-scale = Vector2( 0.465, 0.465 )
-texture = ExtResource( 13 )
-flip_h = true
-
-[node name="ContextCave1" type="Sprite" parent="Background"]
-position = Vector2( -1460, -953 )
-scale = Vector2( 0.465, 0.465 )
-texture = ExtResource( 11 )
-
-[node name="ContextCave2" type="Sprite" parent="Background"]
-position = Vector2( 1790, -956 )
-scale = Vector2( 0.465, 0.465 )
-texture = ExtResource( 14 )
-flip_h = true
-
-[node name="ContextCave3" type="Sprite" parent="Background"]
-position = Vector2( -1465, 212 )
+[node name="ContextCave3" type="Sprite" parent="Walkeble Area"]
+position = Vector2( -1471, -1135 )
 scale = Vector2( 0.465, 0.465 )
 texture = ExtResource( 12 )
 
-[node name="ContextCaveEdge" type="Sprite" parent="Background"]
+[node name="ContextCave4" type="Sprite" parent="Walkeble Area"]
+position = Vector2( 1786, -1134 )
+scale = Vector2( 0.465, 0.465 )
+texture = ExtResource( 13 )
+
+[node name="ContextCave2" type="Sprite" parent="Walkeble Area"]
+position = Vector2( -1450, 222 )
+scale = Vector2( 0.465, 0.465 )
+texture = ExtResource( 14 )
+
+[node name="ContextCave1" type="Sprite" parent="Walkeble Area"]
+position = Vector2( 1791, 180 )
+scale = Vector2( 0.465, 0.465 )
+texture = ExtResource( 11 )
+
+[node name="ContextCaveEdge" type="Sprite" parent="Walkeble Area"]
 position = Vector2( 1641, 222 )
 scale = Vector2( 0.389488, 0.389488 )
 texture = ExtResource( 15 )
 flip_h = true
 
-[node name="ContextCaveEdge2" type="Sprite" parent="Background"]
+[node name="ContextCaveEdge2" type="Sprite" parent="Walkeble Area"]
 position = Vector2( 3528, -843 )
 scale = Vector2( 0.298957, 0.298957 )
 texture = ExtResource( 15 )
@@ -1346,9 +1424,6 @@ position = Vector2( 368, -275 )
 [node name="3x1 Platform23" parent="Platforms" instance=ExtResource( 18 )]
 position = Vector2( 560, -308 )
 
-[node name="3x1 Platform24" parent="Platforms" instance=ExtResource( 18 )]
-position = Vector2( 943, -499 )
-
 [node name="3x1 Platform25" parent="Platforms" instance=ExtResource( 18 )]
 position = Vector2( 558, -660 )
 
@@ -1387,9 +1462,6 @@ position = Vector2( -625, -788 )
 
 [node name="3x1 Platform39" parent="Platforms" instance=ExtResource( 18 )]
 position = Vector2( -401, -629 )
-
-[node name="3x1 Platform40" parent="Platforms" instance=ExtResource( 18 )]
-position = Vector2( 1934, -244 )
 
 [node name="3x1 Platform41" parent="Platforms" instance=ExtResource( 18 )]
 position = Vector2( 1902, -532 )
@@ -1453,11 +1525,17 @@ position = Vector2( -111, -781 )
 [node name="UnstablePlatform3" parent="Platforms" instance=ExtResource( 20 )]
 position = Vector2( 880, -941 )
 
+[node name="UnstablePlatform5" parent="Platforms" instance=ExtResource( 20 )]
+position = Vector2( 944, -494 )
+
+[node name="UnstablePlatform6" parent="Platforms" instance=ExtResource( 20 )]
+position = Vector2( 1936, -238 )
+
 [node name="UnstablePlatform4" parent="Platforms" instance=ExtResource( 20 )]
 position = Vector2( 1936, -780 )
 
 [node name="FireflySpawner" parent="." instance=ExtResource( 21 )]
-position = Vector2( 3159, -701 )
+position = Vector2( 3178, -705 )
 scale = Vector2( 22.974, 11.358 )
 spawnRate = 0.5
 

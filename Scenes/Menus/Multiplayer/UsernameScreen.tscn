@@ -1,15 +1,76 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Menus/Multiplayer/UsernameScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/lines/lines0000.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/mantel/mantelJump0000.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/fur/fur0000.png" type="Texture" id=4]
 [ext_resource path="res://addons/dialogic/Example Assets/Fonts/DefaultFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Textures/Background/Context ForestB2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/Background/Context ForestB1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/Background/Context ForestFR4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/Background/Context ForestBush1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/Background/Context ForestBush2.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="UsernameScreen" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -105.0
+margin_top = -163.0
+margin_right = 1115.0
+margin_bottom = 785.0
+color = Color( 0.756863, 0.658824, 0.392157, 1 )
+
+[node name="ContextForestB2" type="Sprite" parent="."]
+position = Vector2( 733, 437 )
+scale = Vector2( 0.197195, 0.242996 )
+texture = ExtResource( 6 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.509804 )
+margin_left = -105.0
+margin_top = -163.0
+margin_right = 1115.0
+margin_bottom = 785.0
+color = Color( 0.756863, 0.658824, 0.392157, 1 )
+
+[node name="ContextForestB1" type="Sprite" parent="."]
+position = Vector2( 627, 399 )
+scale = Vector2( 0.237005, 0.227147 )
+texture = ExtResource( 7 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_left = -105.0
+margin_top = -163.0
+margin_right = 1115.0
+margin_bottom = 785.0
+color = Color( 0.756863, 0.658824, 0.392157, 1 )
+
+[node name="ContextForestFr4" type="Sprite" parent="."]
+position = Vector2( 611, 375 )
+scale = Vector2( 0.222901, 0.222901 )
+texture = ExtResource( 8 )
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.27451 )
+margin_left = -102.0
+margin_top = -169.0
+margin_right = 1118.0
+margin_bottom = 779.0
+color = Color( 0.756863, 0.658824, 0.392157, 1 )
+
+[node name="ContextForestBush2" type="Sprite" parent="."]
+position = Vector2( 657, 426 )
+scale = Vector2( 0.214322, 0.214322 )
+texture = ExtResource( 10 )
+
+[node name="ContextForestBush1" type="Sprite" parent="."]
+position = Vector2( 534, 469 )
+scale = Vector2( 0.262901, 0.262901 )
+texture = ExtResource( 9 )
 
 [node name="LineEdit" type="LineEdit" parent="."]
 margin_left = 47.0
@@ -29,10 +90,10 @@ custom_fonts/font = ExtResource( 5 )
 text = "Confirm"
 
 [node name="Panel" type="TextEdit" parent="."]
-margin_left = 520.0
-margin_top = -24.0
-margin_right = 875.003
-margin_bottom = 290.0
+margin_left = 661.0
+margin_top = 16.0
+margin_right = 999.0
+margin_bottom = 453.0
 custom_styles/read_only = SubResource( 1 )
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 1 )
@@ -40,10 +101,12 @@ custom_styles/completion = SubResource( 1 )
 readonly = true
 
 [node name="ColorPicker" type="ColorPicker" parent="Panel"]
-margin_left = 73.333
-margin_top = 68.0
-margin_right = 389.333
-margin_bottom = 530.0
+margin_left = -26.0
+margin_top = 57.0
+margin_right = 318.0
+margin_bottom = 541.0
+color = Color( 0.854902, 0.141176, 0.141176, 1 )
+presets_enabled = false
 presets_visible = false
 
 [node name="Mantel" type="Sprite" parent="."]
