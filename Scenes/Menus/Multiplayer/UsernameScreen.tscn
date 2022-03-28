@@ -135,8 +135,10 @@ color = Color( 0.756863, 0.658824, 0.392157, 1 )
 [node name="ContextForestB2" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 9015.0
-margin_bottom = 3457.0
+margin_left = -98.0
+margin_top = -339.0
+margin_right = 14687.0
+margin_bottom = 4541.0
 rect_scale = Vector2( 0.2, 0.3 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -151,8 +153,8 @@ anchor_bottom = 1.0
 color = Color( 0.756863, 0.658824, 0.392157, 1 )
 
 [node name="ContextForestB1" type="Sprite" parent="."]
-position = Vector2( 627, 399 )
-scale = Vector2( 0.237005, 0.227147 )
+position = Vector2( 1001, 553 )
+scale = Vector2( 0.311256, 0.350161 )
 texture = ExtResource( 7 )
 
 [node name="ColorRect3" type="ColorRect" parent="."]
@@ -162,8 +164,8 @@ anchor_bottom = 1.0
 color = Color( 0.756863, 0.658824, 0.392157, 1 )
 
 [node name="ContextForestFr4" type="Sprite" parent="."]
-position = Vector2( 611, 375 )
-scale = Vector2( 0.222901, 0.222901 )
+position = Vector2( 1166, 433 )
+scale = Vector2( 0.375996, 0.377953 )
 texture = ExtResource( 8 )
 
 [node name="ColorRect4" type="ColorRect" parent="."]
@@ -173,13 +175,13 @@ anchor_bottom = 1.0
 color = Color( 0.756863, 0.658824, 0.392157, 1 )
 
 [node name="ContextForestBush2" type="Sprite" parent="."]
-position = Vector2( 657, 426 )
-scale = Vector2( 0.214322, 0.214322 )
+position = Vector2( 1044, 784 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 10 )
 
 [node name="ContextForestBush1" type="Sprite" parent="."]
-position = Vector2( 534, 469 )
-scale = Vector2( 0.262901, 0.262901 )
+position = Vector2( 909, 849 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -216,7 +218,7 @@ margin_bottom = 697.0
 rect_min_size = Vector2( 0, 500 )
 
 [node name="FireflySpawner" parent="CenterContainer/VBoxContainer/Control" instance=ExtResource( 11 )]
-position = Vector2( 150, 377 )
+position = Vector2( 144, 377 )
 scale = Vector2( 107.683, 63.036 )
 
 [node name="Mantel" type="TextureRect" parent="CenterContainer/VBoxContainer/Control"]

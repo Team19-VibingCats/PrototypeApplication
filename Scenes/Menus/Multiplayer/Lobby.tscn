@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Menus/Multiplayer/Lobby.gd" type="Script" id=1]
 [ext_resource path="res://addons/dialogic/Example Assets/Fonts/DefaultFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Textures/Background/Context ForestB2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Background/Context ForestBush1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/Background/Context ForestBush2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/Background/Context ForestFR4.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/Background/Context ForestB1.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Effects/FireFlies/FireflySpawner.tscn" type="PackedScene" id=8]
 
 [node name="Lobby" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,22 +16,83 @@ script = ExtResource( 1 )
 
 [node name="EnterWorld" type="HTTPRequest" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.756863, 0.658824, 0.392157, 1 )
+
+[node name="ContextForestB2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = -266.0
+margin_right = 12610.0
+margin_bottom = 4614.0
+rect_rotation = 5.21235
+rect_scale = Vector2( 0.2, 0.3 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.509804 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.756863, 0.658824, 0.392157, 1 )
+
+[node name="ContextForestB1" type="Sprite" parent="."]
+position = Vector2( 985, 535 )
+scale = Vector2( 0.34727, 0.350161 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.756863, 0.658824, 0.392157, 1 )
+
+[node name="ContextForestFr4" type="Sprite" parent="."]
+position = Vector2( 755, 419 )
+scale = Vector2( 0.399087, 0.377953 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.27451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.756863, 0.658824, 0.392157, 1 )
+
+[node name="ContextForestBush2" type="Sprite" parent="."]
+position = Vector2( 891, 766 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+
+[node name="ContextForestBush1" type="Sprite" parent="."]
+position = Vector2( 1005, 824 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="FireflySpawner" parent="." instance=ExtResource( 8 )]
+position = Vector2( 968, 574 )
+scale = Vector2( 107.683, 63.036 )
+
 [node name="LobbyList" type="RichTextLabel" parent="."]
-margin_left = 356.0
-margin_top = 48.0
-margin_right = 681.0
-margin_bottom = 463.0
+margin_left = 806.0
+margin_top = 294.0
+margin_right = 1131.0
+margin_bottom = 709.0
 custom_fonts/normal_font = ExtResource( 2 )
 text = "Lobby:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StartButton" type="Button" parent="."]
-margin_left = 408.0
-margin_top = 503.0
-margin_right = 628.0
-margin_bottom = 561.0
+margin_left = 846.0
+margin_top = 916.0
+margin_right = 1066.0
+margin_bottom = 974.0
 custom_fonts/font = ExtResource( 2 )
 text = "Start"
 
