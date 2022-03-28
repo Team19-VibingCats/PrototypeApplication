@@ -1,6 +1,9 @@
-extends Node2D
+extends Control
 
 var lobbyTimer = 2.0
+
+func _ready():
+	$CenterContainer/VBoxContainer/Label.text = "Lobby: "+TokenHandler.worldName
 
 func _process(delta):
 	lobbyTimer += delta
@@ -23,12 +26,12 @@ func _on_RetrieveLobby_request_completed(result, response_code, headers, body):
 	
 	if json.result != null:
 		if response_code == 200:
-			$LobbyList.text = ""
+			$CenterContainer/VBoxContainer/LobbyList.text = ""
 			
 			for playerString in json.result:
 				var player = JSON.parse(playerString).result
-				$LobbyList.text += "\n"
-				$LobbyList.text += player["name"]
+				$CenterContainer/VBoxContainer/LobbyList.text += player["name"]
+				$CenterContainer/VBoxContainer/LobbyList.text += "\n"
 
 func _on_EnterWorld_request_completed(result, response_code, headers, body):
 	if response_code == 200:

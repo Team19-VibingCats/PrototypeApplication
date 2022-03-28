@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Menus/Multiplayer/UsernameScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/Characters/Player/Animations/Jump/lines/lines0000.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Textures/Background/Context ForestBush1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Textures/Background/Context ForestBush2.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Effects/FireFlies/FireflySpawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Theme.tres" type="Theme" id=12]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -212,9 +213,9 @@ margin_bottom = 1080.0
 alignment = 1
 
 [node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_top = 197.0
+margin_top = 195.0
 margin_right = 310.0
-margin_bottom = 697.0
+margin_bottom = 695.0
 rect_min_size = Vector2( 0, 500 )
 
 [node name="FireflySpawner" parent="CenterContainer/VBoxContainer/Control" instance=ExtResource( 11 )]
@@ -272,17 +273,18 @@ presets_enabled = false
 presets_visible = false
 
 [node name="Control2" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_top = 741.0
+margin_top = 739.0
 margin_right = 310.0
-margin_bottom = 771.0
+margin_bottom = 769.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="LineEdit" type="LineEdit" parent="CenterContainer/VBoxContainer"]
-margin_top = 775.0
+margin_top = 773.0
 margin_right = 310.0
-margin_bottom = 822.0
+margin_bottom = 820.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
+theme = ExtResource( 12 )
 custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 20
@@ -291,18 +293,37 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="Control3" type="Control" parent="CenterContainer/VBoxContainer"]
-margin_top = 826.0
+margin_top = 824.0
 margin_right = 310.0
-margin_bottom = 836.0
+margin_bottom = 834.0
 rect_min_size = Vector2( 0, 10 )
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 840.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 838.0
 margin_right = 310.0
-margin_bottom = 883.0
-size_flags_horizontal = 5
+margin_bottom = 885.0
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 60.0
+margin_right = 249.0
+margin_bottom = 47.0
+size_flags_horizontal = 7
 size_flags_vertical = 5
+theme = ExtResource( 12 )
 custom_fonts/font = ExtResource( 5 )
 text = "Confirm"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[node name="Control2" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 253.0
+margin_right = 310.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

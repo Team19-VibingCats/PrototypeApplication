@@ -1,15 +1,15 @@
-extends Node2D
+extends Control
 
 
 
 func _on_Join_pressed():
-	if $LineEdit.text.length() > 0:
-		TokenHandler.worldName = $LineEdit.text
+	if $CenterContainer/VBoxContainer/LineEdit.text.length() > 0:
+		TokenHandler.worldName = $CenterContainer/VBoxContainer/LineEdit.text
 		TokenHandler.login()
 
 func _on_Host_pressed():
-	if $LineEdit.text.length() > 0:
-		TokenHandler.worldName = $LineEdit.text
+	if $CenterContainer/VBoxContainer/LineEdit.text.length() > 0:
+		TokenHandler.worldName = $CenterContainer/VBoxContainer/LineEdit.text.replace(" ", "-")
 		TokenHandler.createWorld()
 
 func _process(delta):
