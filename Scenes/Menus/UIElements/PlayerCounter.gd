@@ -10,7 +10,6 @@ func _exit_tree():
 	GlobalVariables.deregisterPlayerCountListener(self)
 
 func playerCountChanged(amount):
-	if amount == 0: return
 	$RichTextLabel.bbcode_text = "[center]"+str(amount)+" / "+ str(GlobalVariables.playerCount)
 	$RichTextLabel.bbcode_text += " [img=20]res://Assets/Textures/UI/PlayerIcon.png[/img][/center]"
 	

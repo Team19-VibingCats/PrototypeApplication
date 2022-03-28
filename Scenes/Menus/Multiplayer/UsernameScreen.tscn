@@ -288,7 +288,7 @@ theme = ExtResource( 12 )
 custom_fonts/font = ExtResource( 5 )
 align = 1
 max_length = 20
-placeholder_text = "Username"
+placeholder_text = "Nickname"
 caret_blink = true
 caret_blink_speed = 0.5
 
