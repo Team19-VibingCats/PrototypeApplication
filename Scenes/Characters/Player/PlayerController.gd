@@ -44,6 +44,9 @@ func handleInputs():
 		moveDirection.x += 1
 	if Input.is_action_pressed("Up"):
 		moveDirection.y += 1
+		if Input.is_action_just_pressed("Up"):
+			if !body.touchingGround:
+				body.spin()
 	if Input.is_action_pressed("Down"):
 		moveDirection.y -= 1
 	

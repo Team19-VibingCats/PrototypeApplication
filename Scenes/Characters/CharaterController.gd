@@ -24,6 +24,8 @@ var groundJitterFix = 1.0
 var touchingCeiling = false
 var justJumped = false
 
+var spinCooldown = 0.0
+
 func _ready():
 	for spritePath in characterSpritePaths:
 		characterSprites.append(get_node(spritePath))
@@ -45,7 +47,9 @@ func spin():
 		FunctionCallHandler.requestFunctionCall($Spin,"play")
 		FunctionCallHandler.requestFunctionCall(animationPlayer,"play","Spin")
 		
-		if !touchingGround:
+		if !touchingGround && spinCooldown <= 0.0:
+			spinCooldown = 0.2
+			
 			if linear_velocity.y > 0:
 				linear_velocity.y = 0
 				linear_velocity.y -= spinHeightBoost*2
@@ -63,17 +67,20 @@ func moveBody(delta):
 	#	Applying velocity and dampening
 	linear_velocity.x += moveDirection.x*accelaration*delta
 	linear_velocity.x *= damp
+	spinCooldown -= delta
 	
 #	Jump logic
 	if moveDirection.y == 1:
 		if touchingGround:
 			currentJumpLength = 0.0
-			groundJitterFix = 0
+			groundJitterFix = -1.0
+			touchingGround = false
 			$Jump.play()
 			FunctionCallHandler.requestFunctionCall($Jump,"play")
 			playAnimation({"Animation": "Jump", "Reset": true, "Block": true})
 			
-			if get_parent().get_node("AnimationPlayer").is_playing():
+			if get_parent().get_node("AnimationPlayer").is_playing() && spinCooldown <= 0.0:
+				spinCooldown = 0.2
 				playSpinParticles()
 				linear_velocity.y -= spinHeightBoost
 				justSpinned = true
@@ -103,7 +110,7 @@ func groundDetection():
 	
 	touchingCeiling = $GroundDetector.is_on_ceiling()
 	touchingGround = groundJitterFix > 0
-	if touchingGround: justSpinned = false
+	if touchingGround && spinCooldown <= 0.0: justSpinned = false
 
 func setMoveDirection(direction):
 	moveDirection = direction

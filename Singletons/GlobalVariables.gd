@@ -12,7 +12,7 @@ func playerCountChanged(amount):
 	playerCount = amount
 	
 	for listener in playerCountListeners:
-		listener.playerCountChanged(amount)
+		listener.maxPlayerCountChanged()
 
 func registerPlayerCountListener(listener):
 	playerCountListeners.append(listener)

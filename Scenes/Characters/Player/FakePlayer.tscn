@@ -141,6 +141,11 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 58 ), ExtResource( 68 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 73 ), ExtResource( 56 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 25.0
+}, {
 "frames": [ ExtResource( 45 ), ExtResource( 80 ), ExtResource( 79 ), ExtResource( 71 ), ExtResource( 82 ), ExtResource( 76 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 75 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 78 ), ExtResource( 77 ), ExtResource( 53 ), ExtResource( 54 ) ],
 "loop": true,
 "name": "Fall",
@@ -150,11 +155,6 @@ animations = [ {
 "loop": false,
 "name": "Jump",
 "speed": 35.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 58 ), ExtResource( 68 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 73 ), ExtResource( 56 ), ExtResource( 66 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 60 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -163,6 +163,11 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 88 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 96 ), ExtResource( 91 ), ExtResource( 105 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 116 ), ExtResource( 92 ), ExtResource( 111 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 101 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 25.0
 }, {
 "frames": [ ExtResource( 113 ), ExtResource( 94 ), ExtResource( 115 ), ExtResource( 90 ), ExtResource( 87 ), ExtResource( 103 ), ExtResource( 117 ), ExtResource( 110 ), ExtResource( 89 ), ExtResource( 99 ), ExtResource( 104 ), ExtResource( 114 ), ExtResource( 112 ), ExtResource( 95 ), ExtResource( 85 ) ],
 "loop": true,
@@ -173,11 +178,6 @@ animations = [ {
 "loop": false,
 "name": "Jump",
 "speed": 35.0
-}, {
-"frames": [ ExtResource( 88 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 96 ), ExtResource( 91 ), ExtResource( 105 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 116 ), ExtResource( 92 ), ExtResource( 111 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 101 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 25.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -186,6 +186,11 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 52 ), ExtResource( 62 ), ExtResource( 10 ), ExtResource( 63 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 81 ), ExtResource( 12 ), ExtResource( 83 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 25.0
 }, {
 "frames": [ ExtResource( 40 ), ExtResource( 18 ), ExtResource( 35 ), ExtResource( 20 ), ExtResource( 38 ), ExtResource( 29 ), ExtResource( 46 ), ExtResource( 14 ), ExtResource( 86 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 39 ), ExtResource( 30 ), ExtResource( 17 ) ],
 "loop": true,
@@ -196,11 +201,6 @@ animations = [ {
 "loop": false,
 "name": "Jump",
 "speed": 35.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 52 ), ExtResource( 62 ), ExtResource( 10 ), ExtResource( 63 ), ExtResource( 4 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 81 ), ExtResource( 12 ), ExtResource( 83 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 25.0
 } ]
 
 [sub_resource type="Gradient" id=17]
@@ -287,7 +287,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 2 )
 animation = "Fall"
-frame = 4
+frame = 8
 playing = true
 
 [node name="Mantel" type="AnimatedSprite" parent="Body/Sprites"]
@@ -295,7 +295,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 3 )
 animation = "Fall"
-frame = 6
+frame = 10
 playing = true
 
 [node name="Lines" type="AnimatedSprite" parent="Body/Sprites"]
@@ -303,7 +303,7 @@ position = Vector2( 0, -9.064 )
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 4 )
 animation = "Fall"
-frame = 4
+frame = 8
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="Body"]

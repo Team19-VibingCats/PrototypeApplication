@@ -370,7 +370,7 @@ extents = Vector2( 46.5, 18 )
 [sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 30.75, 15 )
 
-[node name="CurrentScene" type="Node2D"]
+[node name="CurrentScene2" type="Node2D"]
 position = Vector2( 959, -73 )
 script = ExtResource( 14 )
 
@@ -541,6 +541,7 @@ anims/OpenDoor = SubResource( 34 )
 anims/RESET = SubResource( 35 )
 
 [node name="Bridges" type="Node2D" parent="."]
+z_index = 2
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Bridges"]
 position = Vector2( -2988, 210 )
@@ -662,25 +663,30 @@ polygon = PoolVector2Array( 32, -8, 73, -20, 78, -11, 31, 4 )
 [node name="FireflySpawner" parent="." instance=ExtResource( 4 )]
 position = Vector2( -2473, 32 )
 scale = Vector2( 100, 50 )
+z_index = 2
 spawnRate = 2.0
 
 [node name="FireflySpawner2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 500, 66 )
 scale = Vector2( 100, 50 )
+z_index = 2
 spawnRate = 2.0
 
 [node name="FireflySpawner3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2754, 29 )
 scale = Vector2( 100, 50 )
+z_index = 2
 spawnRate = 2.0
 
 [node name="FireflySpawner4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5068, -25 )
 scale = Vector2( 100, 50 )
+z_index = 2
 spawnRate = 2.0
 
 [node name="FireFly" parent="." instance=ExtResource( 3 )]
 position = Vector2( -3591, 179 )
+z_index = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
@@ -689,35 +695,42 @@ autoplay = true
 [node name="ContextForest1" type="Sprite" parent="."]
 position = Vector2( -2769, 232 )
 scale = Vector2( 0.44, 0.44 )
+z_index = 2
 texture = ExtResource( 8 )
 
 [node name="ContextForest4" type="Sprite" parent="."]
 position = Vector2( 5345, 325 )
 scale = Vector2( 0.45, 0.45 )
+z_index = 2
 texture = ExtResource( 5 )
 
 [node name="ContextForest3" type="Sprite" parent="."]
 position = Vector2( 2649, 304 )
 scale = Vector2( 0.5, 0.5 )
+z_index = 2
 texture = ExtResource( 6 )
 
 [node name="ContextForest2" type="Sprite" parent="."]
 position = Vector2( 64, 184 )
 scale = Vector2( 0.5, 0.5 )
+z_index = 2
 texture = ExtResource( 7 )
 
 [node name="ContextForestFr2" type="Sprite" parent="."]
 position = Vector2( 6043, 71 )
 scale = Vector2( 0.507105, 0.507105 )
+z_index = 2
 texture = ExtResource( 18 )
 
 [node name="ContextCaveEdge" type="Sprite" parent="."]
 position = Vector2( -4172, 1.00003 )
 scale = Vector2( 0.172407, 0.317442 )
+z_index = 2
 texture = ExtResource( 11 )
 
 [node name="Mushrooms" type="Node2D" parent="."]
 position = Vector2( -321, -97.9999 )
+z_index = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Mushrooms"]
 position = Vector2( 17, 608 )
@@ -829,6 +842,7 @@ one_way_collision = true
 [node name="Platforms Art" type="Node2D" parent="."]
 position = Vector2( -2769, 232 )
 scale = Vector2( 0.44, 0.44 )
+z_index = 2
 
 [node name="ContextPlatforms41" type="Sprite" parent="Platforms Art"]
 position = Vector2( -265.908, -109.091 )
