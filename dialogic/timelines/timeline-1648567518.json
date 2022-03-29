@@ -1,0 +1,159 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh, you found them! Thank you so much!"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1648565060.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1648565060.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "We got tangled up at the top of the tree because Leo kept pulling on our rope!"
+		},
+		{
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well I’m sorry, I was just trying to have fun!"
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Alright, alright. Calm down you two."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "If you keep teasing each other like this you’re never going to get anywhere."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You need to learn to work together, and make sure you’re able to trust each other."
+		},
+		{
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Sorry, dad…"
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I’m not mad at you, in fact I’m very glad that you’re alright."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I just hope you will take this as a learning opportunity."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And thank you for saving my kids."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I hope working together with your rope has taught you a lot about cooperation and teasing as well."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "As a final message, I would like to leave you with a question…"
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Do you think you would work better on your own, or with a group of people?"
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Feel free to think about it as long as you like."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Thanks again, and good luck out there."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4",
+		"file": "timeline-1648567518.json",
+		"name": "Lauren3"
+	}
+}

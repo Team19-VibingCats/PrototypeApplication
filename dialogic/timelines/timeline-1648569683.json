@@ -1,0 +1,138 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1648565060.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1648565060.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Leo, stop messing with our rope!"
+		},
+		{
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ha-ha! Just jump onto the rope quicker, stop whining!"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": true,
+			"change_position": false,
+			"change_z_index": false,
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "(Don't change)",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 2,
+			"z_index": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[i]The twins turn around and notice you[/i]"
+		},
+		{
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey, who are you?"
+		},
+		{
+			"character": "character-1648565060.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Leave us alone!"
+		},
+		{
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You’re here to bring us back to our dad?"
+		},
+		{
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well then you’ll have to catch us first!"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1648565037.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"character": "character-1648565060.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Leo! Wait for me!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4",
+		"file": "timeline-1648569683.json",
+		"name": "LeoLea1"
+	}
+}

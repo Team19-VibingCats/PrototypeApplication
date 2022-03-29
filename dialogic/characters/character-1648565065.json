@@ -1,0 +1,29 @@
+{
+	"color": "#ffffffff",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1648565065.json",
+	"mirror_portraits": false,
+	"name": "LeaLeo",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/Textures/Characters/NPC/LeaLeo.png"
+		},
+		{
+			"name": "Rope",
+			"path": "res://Assets/Textures/Characters/NPC/LeaLeoRope.png"
+		},
+		{
+			"name": "Tangled",
+			"path": "res://Assets/Textures/Characters/NPC/LeaLeoTangled.png"
+		}
+	],
+	"scale": 70,
+	"theme": ""
+}

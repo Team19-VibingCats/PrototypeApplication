@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
@@ -308,7 +308,7 @@ glow_enabled = true
 glow_bicubic_upscale = true
 adjustment_brightness = 0.4
 
-[sub_resource type="Shader" id=30]
+[sub_resource type="Shader" id=65]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/teleport-effect
@@ -363,7 +363,7 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id=31]
-shader = SubResource( 30 )
+shader = SubResource( 65 )
 shader_param/progress = 0.0
 shader_param/noise_desnity = 10.0
 shader_param/beam_size = 0.058
@@ -430,7 +430,7 @@ blend_mode = 1
 [sub_resource type="Curve" id=38]
 _data = [ Vector2( 0, 0 ), 0.0, 3.97273, 0, 0, Vector2( 1, 0 ), -3.96364, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=39]
+[sub_resource type="CurveTexture" id=66]
 width = 64
 curve = SubResource( 38 )
 
@@ -445,17 +445,71 @@ orbit_velocity_random = 1.0
 damping = 111.51
 scale = 0.02
 scale_random = 0.09
-scale_curve = SubResource( 39 )
+scale_curve = SubResource( 66 )
 color = Color( 0.498039, 1, 0.956863, 1 )
 
+[sub_resource type="Shader" id=40]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color : hint_color = vec4(0.0, 1.02, 1.2, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
 [sub_resource type="ShaderMaterial" id=46]
-shader = SubResource( 30 )
+shader = SubResource( 40 )
 shader_param/progress = 0.0
 shader_param/noise_desnity = 10.0
 shader_param/beam_size = 0.058
 shader_param/color = Color( 0, 1.02, 1.2, 1 )
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=67]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:material:shader_param/progress")
@@ -511,7 +565,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="ShaderMaterial" id=47]
-shader = SubResource( 30 )
+shader = SubResource( 40 )
 shader_param/progress = 0.0
 shader_param/noise_desnity = 10.0
 shader_param/beam_size = 0.058
@@ -967,6 +1021,7 @@ position = Vector2( 1169, 498 )
 hasLight = true
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -1028,7 +1083,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC2"]
-anims/RESET = SubResource( 40 )
+anims/RESET = SubResource( 67 )
 anims/Remove = SubResource( 41 )
 
 [node name="Particles2D" type="Particles2D" parent="NPC2"]

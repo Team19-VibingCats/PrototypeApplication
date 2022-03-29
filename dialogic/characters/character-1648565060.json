@@ -1,0 +1,21 @@
+{
+	"color": "#ffffffff",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1648565060.json",
+	"mirror_portraits": false,
+	"name": "Lea",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 300,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/Textures/Characters/NPC/Lea.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

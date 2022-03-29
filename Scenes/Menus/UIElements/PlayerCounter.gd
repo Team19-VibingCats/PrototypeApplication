@@ -1,6 +1,7 @@
 extends Node2D
 
 var lastAmount = 0
+var faded = false
 
 func _ready():
 	playerCountChanged(0)
@@ -16,7 +17,8 @@ func playerCountChanged(amount):
 	$RichTextLabel.bbcode_text = "[center]"+str(amount)+" / "+ str(GlobalVariables.playerCount)
 	$RichTextLabel.bbcode_text += " [img=20]res://Assets/Textures/UI/PlayerIcon.png[/img][/center]"
 	
-	if amount == GlobalVariables.playerCount:
+	if amount == GlobalVariables.playerCount && !faded:
+		faded = true
 		$AnimationPlayer.play("Fade")
 
 func maxPlayerCountChanged():

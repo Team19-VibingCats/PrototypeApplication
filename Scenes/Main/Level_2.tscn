@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Textures/TileSets/TX Tileset Ground.png" type="Texture" id=2]
@@ -38,6 +38,306 @@
 [ext_resource path="res://Scenes/MapDesign/Mechanics/Door/Door.gd" type="Script" id=36]
 [ext_resource path="res://Scenes/MapDesign/Detectors/PlayerDetectionArea.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/Menus/UIElements/PlayerCounter.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Assets/Textures/Other/Steam.png" type="Texture" id=39]
+[ext_resource path="res://Scenes/Characters/NPCs/NPC.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Assets/Textures/Characters/NPC/Lauren.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Textures/Characters/NPC/LeaLeoTangled.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Textures/Characters/NPC/LeaLeoRope.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Textures/Characters/NPC/LeaLeo.png" type="Texture" id=44]
+
+[sub_resource type="Animation" id=42]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=43]
+resource_name = "Remove"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.6, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.6, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+
+[sub_resource type="CanvasItemMaterial" id=46]
+
+[sub_resource type="Curve" id=45]
+_data = [ Vector2( 0, 0 ), 0.0, 3.97273, 0, 0, Vector2( 1, 0 ), -3.96364, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=39]
+width = 64
+curve = SubResource( 45 )
+
+[sub_resource type="ParticlesMaterial" id=47]
+lifetime_randomness = 0.73
+emission_shape = 1
+emission_sphere_radius = 45.69
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 157.9
+initial_velocity_random = 0.83
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+damping = 111.51
+scale = 0.3
+scale_random = 0.09
+scale_curve = SubResource( 39 )
+color = Color( 0.733333, 0.733333, 0.733333, 1 )
+
+[sub_resource type="Animation" id=48]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "Remove"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.6, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.6, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+
+[sub_resource type="Animation" id=50]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../NPC2:dialogName")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Lauren2" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../NPC2/Sprite2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "Remove"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.6, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.6, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../NPC2:dialogName")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Lauren2", "Lauren3" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../NPC2/Sprite2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=52]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "Remove"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.6, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.6, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
 
 [sub_resource type="Environment" id=29]
 background_mode = 4
@@ -492,8 +792,114 @@ scale = Vector2( 0.437448, 0.320829 )
 texture = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -3808, 228 )
+position = Vector2( -3789, 226 )
 hasRope = true
+
+[node name="NPC" parent="." instance=ExtResource( 40 )]
+position = Vector2( -3612, 242 )
+dialogName = "Lauren1"
+
+[node name="Sprite" type="Sprite" parent="NPC"]
+position = Vector2( 6, -20 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 41 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]
+anims/RESET = SubResource( 42 )
+anims/Remove = SubResource( 43 )
+
+[node name="Particles2D" type="Particles2D" parent="NPC"]
+material = SubResource( 46 )
+position = Vector2( 1, -0.999998 )
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource( 47 )
+texture = ExtResource( 39 )
+
+[node name="NPC2" parent="." instance=ExtResource( 40 )]
+position = Vector2( 6146, 146 )
+dialogName = "Lauren2"
+
+[node name="Sprite" type="Sprite" parent="NPC2"]
+position = Vector2( 6, -20 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 41 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC2"]
+anims/RESET = SubResource( 48 )
+anims/Remove = SubResource( 49 )
+
+[node name="Particles2D" type="Particles2D" parent="NPC2"]
+material = SubResource( 46 )
+position = Vector2( 1, -0.999998 )
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource( 47 )
+texture = ExtResource( 39 )
+
+[node name="Sprite2" type="Sprite" parent="NPC2"]
+visible = false
+position = Vector2( 106, 1 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 44 )
+
+[node name="NPC3" parent="." instance=ExtResource( 40 )]
+position = Vector2( 2364, -621 )
+dialogName = "LeoLea2"
+
+[node name="Sprite" type="Sprite" parent="NPC3"]
+position = Vector2( -3, 1 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 42 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC3"]
+anims/RESET = SubResource( 50 )
+anims/Remove = SubResource( 51 )
+
+[node name="Particles2D" type="Particles2D" parent="NPC3"]
+material = SubResource( 46 )
+position = Vector2( 1, -0.999998 )
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource( 47 )
+texture = ExtResource( 39 )
+
+[node name="NPC4" parent="." instance=ExtResource( 40 )]
+position = Vector2( -644, 22 )
+dialogName = "LeoLea1"
+
+[node name="Sprite" type="Sprite" parent="NPC4"]
+position = Vector2( 2, -1 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 43 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC4"]
+anims/RESET = SubResource( 52 )
+anims/Remove = SubResource( 53 )
+
+[node name="Particles2D" type="Particles2D" parent="NPC4"]
+material = SubResource( 46 )
+position = Vector2( 1, -0.999998 )
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource( 47 )
+texture = ExtResource( 39 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 29 )
@@ -842,7 +1248,6 @@ one_way_collision = true
 [node name="Platforms Art" type="Node2D" parent="."]
 position = Vector2( -2769, 232 )
 scale = Vector2( 0.44, 0.44 )
-z_index = 2
 
 [node name="ContextPlatforms41" type="Sprite" parent="Platforms Art"]
 position = Vector2( -265.908, -109.091 )

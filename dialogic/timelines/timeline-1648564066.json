@@ -1,0 +1,83 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Oh, hello there!"
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You’ve come at the right time, I need your help."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "My name is Lauren, and I have two kids named Leo and Lea."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "They were playing together in the forest, and I think they got lost."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "If you could find them and bring them back to me, that would be very much appreciated."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You should have a rope now, use it to get around the place. Aim with your mouse and left click to attach your rope onto solid surfaces."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "If you grapple onto a surface and don’t move, your friends will be able to walk across your rope like a bridge."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Use this wisely and work together to climb to greater heights."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good luck out there."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4",
+		"file": "timeline-1648564066.json",
+		"name": "Lauren1"
+	}
+}

@@ -1,0 +1,59 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Have you been able to find my kids yet?"
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "…they ran away?"
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Typical…"
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Try looking high up in the trees, they love swinging around in the air."
+		},
+		{
+			"character": "character-1648563572.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I know you’ll be able to find them, I’m counting on you."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4",
+		"file": "timeline-1648567132.json",
+		"name": "Lauren2"
+	}
+}
