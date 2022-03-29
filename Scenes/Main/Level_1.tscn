@@ -791,7 +791,7 @@ noise_offset = Vector2( 16.396, 12.458 )
 [sub_resource type="ShaderMaterial" id=55]
 shader = SubResource( 50 )
 shader_param/scale = Vector2( 1.169, 3.569 )
-shader_param/zoom = 0.39685
+shader_param/zoom = 0.311507
 shader_param/gap_stretch = Vector2( 0.8, 0.05 )
 shader_param/refraction_stretch = Vector2( 2, 0.8 )
 shader_param/refraction_strength = 0.015
