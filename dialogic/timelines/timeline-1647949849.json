@@ -42,13 +42,13 @@
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I hope you had a fun conversation while you climbed your way up here!"
+			"text": "I hope you had fun working together while you climbed your way up here."
 		},
 		{
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "And don’t worry, I won’t take much of your time here."
+			"text": "Now, I won’t take much of your time here."
 		},
 		{
 			"character": "character-1647895646.json",
@@ -72,13 +72,13 @@
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Feel free to try different paths or solutions, and discuss where you want to go or which paths you want to try next."
+			"text": "Maybe drop down with them to help them get back to the rest of the group."
 		},
 		{
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Remember it’s not a competition or race either."
+			"text": "And feel free to try different paths or solutions, and discuss where you want to go or which paths you want to try next."
 		},
 		{
 			"character": "character-1647895646.json",
@@ -90,7 +90,7 @@
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You should inspire and encourage each other to keep going, and don’t leave your friends behind if you’re ahead."
+			"text": "You should try to inspire and encourage each other to keep going, and don’t leave your friends behind if you’re ahead."
 		},
 		{
 			"character": "character-1647895646.json",
@@ -102,13 +102,7 @@
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Maybe even have another conversation while you’re navigating the path."
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Just ask people something about their lives! People usually like talking about themselves."
+			"text": "Maybe even have a conversation while you’re navigating the path."
 		},
 		{
 			"character": "character-1647895646.json",

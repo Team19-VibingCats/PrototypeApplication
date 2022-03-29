@@ -30,18 +30,6 @@
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You’re probably wondering what’s going on here."
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "No worries! I’ll explain everything!"
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
 			"text": "My name is Axi, and welcome to my cave!"
 		},
 		{
@@ -54,37 +42,7 @@
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It’s totally safe in here though! You can’t get hurt anywhere around here."
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Except maybe from mean words from your teammates."
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "But if you can communicate effectively and trust one another, then you’ll get out of here in no time!"
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Of course you will need to light up the area around you to know where you’re going."
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "As you can see, you emit only a small bit of light by yourself…"
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "But as you might’ve noticed already, you will glow much brighter if you stand side by side with your friends!"
+			"text": "As you might’ve noticed already, you will glow much brighter if you stand side by side with your friends!"
 		},
 		{
 			"character": "character-1647895646.json",
@@ -96,55 +54,31 @@
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "So stick together and make your way to the waterfall up above!"
+			"text": "Also, you will need to jump around a bit to get through the cave."
 		},
 		{
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Also, you will need to jump around a bit to get through the cave"
+			"text": "To jump a bit higher or to save yourself from a fall, you can press SHIFT to spin in the air!"
 		},
 		{
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "But even if you’re not great at jumping, you can press SHIFT to spin in the air!"
+			"text": "And that’s all you need to know for now."
 		},
 		{
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "This can be used to save yourself from a fall, or to gain a bit more distance and height out of your jump!"
+			"text": "Keep in mind, there’s no rush to make it through the cave."
 		},
 		{
 			"character": "character-1647895646.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "And really that’s all you need to know for now."
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Maybe spark a bit of conversation to get to know each other?"
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Talk about what you had for breakfast or something."
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Or tell them about your favourite fact you discovered recently?"
-		},
-		{
-			"character": "character-1647895646.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Don’t be afraid to talk to your friends, try to have some fun while you’re here! It’s a safe space after all."
+			"text": "And it’s not a race either, so take your time!"
 		},
 		{
 			"character": "character-1647895646.json",
