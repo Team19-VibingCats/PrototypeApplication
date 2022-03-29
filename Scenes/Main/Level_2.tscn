@@ -477,12 +477,6 @@ texture = ExtResource( 19 )
 position = Vector2( 6233.33, 151.111 )
 texture = ExtResource( 22 )
 
-[node name="ContextCaveEdge2" type="Sprite" parent="."]
-position = Vector2( -3742, 32.0002 )
-rotation = 1.46536
-scale = Vector2( 0.425815, 0.320829 )
-texture = ExtResource( 11 )
-
 [node name="ColorRect4" type="ColorRect" parent="."]
 modulate = Color( 1, 1, 1, 0.117647 )
 margin_left = -4488.0
@@ -490,6 +484,12 @@ margin_top = -1620.0
 margin_right = 8477.0
 margin_bottom = 1738.0
 color = Color( 0.364706, 0.380392, 0.235294, 1 )
+
+[node name="ContextCaveEdge2" type="Sprite" parent="."]
+position = Vector2( -3732, 7 )
+rotation = 1.46536
+scale = Vector2( 0.437448, 0.320829 )
+texture = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -3808, 228 )
@@ -712,8 +712,8 @@ scale = Vector2( 0.507105, 0.507105 )
 texture = ExtResource( 18 )
 
 [node name="ContextCaveEdge" type="Sprite" parent="."]
-position = Vector2( -4166, 103 )
-scale = Vector2( 0.172407, 0.264797 )
+position = Vector2( -4172, 1.00003 )
+scale = Vector2( 0.172407, 0.317442 )
 texture = ExtResource( 11 )
 
 [node name="Mushrooms" type="Node2D" parent="."]
@@ -1133,6 +1133,13 @@ position = Vector2( 19202.3, -531.817 )
 rotation = 0.345346
 scale = Vector2( 1.02372, 1.02372 )
 texture = ExtResource( 33 )
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_left = -4522.0
+margin_top = -110.0
+margin_right = -4134.0
+margin_bottom = 623.0
+color = Color( 0, 0, 0, 1 )
 
 [connection signal="allPlayersPresent" from="Door/PlayerDetectionArea" to="Door" method="openDoor"]
 [connection signal="playerCountChanged" from="Door/PlayerDetectionArea" to="Door/PlayerCounter" method="playerCountChanged"]
